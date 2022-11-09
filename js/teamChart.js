@@ -2,7 +2,7 @@ const padding = {
     left: 30,
     right: 15,
     top: 15,
-    bottom: 20
+    bottom: 50
 }
 const chart = {
     width: 800,
@@ -49,6 +49,12 @@ class TeamChart {
             .scale(this.scaleX)
 
         this.svg.selectAll('g').remove()
+
+        this.svg.append('text')
+            .attr("x", chart.width/2)
+            .attr("y", chart.height - 10)
+            .text("Season")
+
 
         this.svg.append('g')
             .attr('transform', 'translate(' + padding.left + ',0)')

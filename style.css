@@ -22,12 +22,13 @@ h2 {
     text-align: center;
 }
 
-.col-4 {
+.vertical-align-parent {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.midvert {
+
+.vertical-align-child {
     display: inline-block;
 }
