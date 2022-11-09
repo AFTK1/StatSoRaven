@@ -10,7 +10,7 @@
 h2 {
     text-align: center;
     background-color:rgb(0, 0, 0);
-    padding: 25px;
+    padding: 15px;
     color:rgb(255, 255, 255);
 }
 
@@ -28,7 +28,16 @@ h2 {
     justify-content: center;
 }
 
+.navbar {
+    
+    height: 200px;
+    background-color:rgb(172, 172, 172) !important;
+}
 
 .vertical-align-child {
     display: inline-block;
+}
+
+.navbar-brand {
+    padding: 50px;
 }
