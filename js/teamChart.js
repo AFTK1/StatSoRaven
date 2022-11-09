@@ -59,13 +59,13 @@ class TeamChart {
         this.svg.append('g')
             .attr('transform', 'translate(' + padding.left + ',0)')
             .transition()
-            .duration(800)
+            .duration(1500)
             .call(y_axis)
 
         this.svg.append('g')
             .attr('transform', 'translate(0,' + (chart.height - padding.bottom) + ')')
             .transition()
-            .duration(800)
+            .duration(1500)
             .call(x_axis)
 
         this.addLegend()
