@@ -5,7 +5,7 @@ const padding = {
     bottom: 50
 }
 const chart = {
-    width: 800,
+    width: 850,
     height: 600
 }
 class TeamChart {
@@ -14,7 +14,7 @@ class TeamChart {
         console.log(data)
 
         this.svg = d3.selectAll("#teamChart")
-            .attr("width", chart.width)
+            .attr("width", "100%")
             .attr("height", chart.height)
 
 
@@ -48,11 +48,11 @@ class TeamChart {
         var x_axis = d3.axisBottom()
             .scale(this.scaleX)
 
-        this.svg.selectAll('g').remove()
+        this.svg.selectAll('text,.tick').remove()
 
         this.svg.append('text')
-            .attr("x", chart.width/2)
-            .attr("y", chart.height - 10)
+            .attr("x", chart.width / 2)
+            .attr("y", chart.height - 5)
             .text("Season")
 
 
@@ -67,6 +67,38 @@ class TeamChart {
             .transition()
             .duration(800)
             .call(x_axis)
+
+        this.addLegend()
+    }
+
+    addLegend() {
+        let legend = this.svg.append('g')
+
+        legend.append('text')
+            .text('Ravens')
+            .attr('x', chart.width + 50)
+            .attr('y', chart.height / 2)
+
+        legend.append('text')
+            .text('Opponents')
+            .attr('x', chart.width + 50)
+            .attr('y', (chart.height / 2) + 20)
+
+        legend.append('rect')
+            .attr('x', chart.width + 30)
+            .attr('y', (chart.height / 2) - 10)
+            .attr('width', 10)
+            .attr('height', 10)
+            .attr('fill', 'purple');
+
+        legend.append('rect')
+            .attr('x', chart.width + 30)
+            .attr('y', (chart.height / 2) + 10)
+            .attr('width', 10)
+            .attr('height', 10)
+            .attr('fill', 'red');
+
+
     }
 
     attachCategoryHandler() {
@@ -85,11 +117,11 @@ class TeamChart {
                 let stats = categories[this.text]
 
                 let items = statisticDropDown.select(".dropdown-menu")
-                    .selectAll('.dropdown-item')
+                    
 
-                items.remove()
+                items.selectAll('a').remove()
 
-                items
+                items.selectAll('dropdown-item')
                     .data(stats)
                     .enter()
                     .append('a')
@@ -137,7 +169,7 @@ class TeamChart {
         var allData = ravensData.concat(opponentsData)
         console.log(allData)
         this.scaleY
-            .domain([d3.min(allData,function(d){return d.y}),d3.max(allData,function(d){return d.y})])
+            .domain([d3.min(allData, function (d) { return d.y }), d3.max(allData, function (d) { return d.y })])
 
         this.drawAxis()
         this.svg.selectAll('.chartPath').remove()
@@ -173,7 +205,7 @@ class TeamChart {
             .transition()
             .ease(d3.easeLinear)
             .attr("stroke-dashoffset", 0)
-            .duration(2500)
+            .duration(1500)
 
         opponentsPath
             .attr("stroke-dasharray", opponentsPathLength + " " + opponentsPathLength)
@@ -181,6 +213,6 @@ class TeamChart {
             .transition()
             .ease(d3.easeLinear)
             .attr("stroke-dashoffset", 0)
-            .duration(2500)
+            .duration(1500)
     }
 }
