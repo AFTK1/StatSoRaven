@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
   <script src="js/script.js"></script>
@@ -26,32 +27,42 @@
     </div>
   </div>
   <div style="background-color: rgb(145, 70, 206);height: 30px;"></div>
+
   <h2 class="mt-4">Team Stats</h2>
-  <div class="row mb-2">
-    <div class="col-2 themed-grid-col">
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown button
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+  <div class="container">
+    <div class="row mb-2">
+        <div class="col-4 themed-grid-col center">
+            <div class="midVert">
+            <div class="dropdown category">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Category
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" >Scoring</a>
+                  <a class="dropdown-item disabled" >1st Downs</a>
+                  <a class="dropdown-item disabled" >Passing</a>
+                  <a class="dropdown-item disabled" >Rushing</a>
+                  <a class="dropdown-item disabled" >Offense</a>
+                  <a class="dropdown-item disabled" >Returns</a>
+                  <a class="dropdown-item disabled" >Kicking</a>
+                  <a class="dropdown-item disabled" >Penalties</a>
+                </div>
+              </div>
+              <div class="dropdown statistic">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Statistic
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown button
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </div>
-    </div>
-    <div class="col-10 themed-grid-col">.col-10</div>
+        </div>
+        <div class="col-8 themed-grid-col center">
+            <svg id="teamChart"></svg>
+        </div>
+      </div>
   </div>
+
 
   <h2 class="mt-4">Player Stats</h2>
   <div class="row mb-2">

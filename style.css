@@ -18,3 +18,16 @@ h2 {
     margin: 5px;
 }
 
+.center {
+    text-align: center;
+}
+
+.col-4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.midvert {
+    display: inline-block;
+}

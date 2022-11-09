@@ -1,0 +1,13 @@
+[
+    {"season": 2012,"ravens":{"scoring":{"Total Points Per Game":26,"Total Points": 421, "Total Touchdowns": 45}},"opponents":{"scoring":{"Total Points Per Game":18,"Total Points": 320, "Total Touchdowns": 35}}},
+    {"season": 2013,"ravens":{"scoring":{"Total Points Per Game":30,"Total Points": 435, "Total Touchdowns": 52}},"opponents":{"scoring":{"Total Points Per Game":20,"Total Points": 411, "Total Touchdowns": 24}}},
+    {"season": 2014,"ravens":{"scoring":{"Total Points Per Game":25,"Total Points": 388, "Total Touchdowns": 12}},"opponents":{"scoring":{"Total Points Per Game":28,"Total Points": 413, "Total Touchdowns": 31}}},
+    {"season": 2015,"ravens":{"scoring":{"Total Points Per Game":30,"Total Points": 451, "Total Touchdowns": 24}},"opponents":{"scoring":{"Total Points Per Game":21,"Total Points": 342, "Total Touchdowns": 26}}},
+    {"season": 2016,"ravens":{"scoring":{"Total Points Per Game":26,"Total Points": 432, "Total Touchdowns": 34}},"opponents":{"scoring":{"Total Points Per Game":24,"Total Points": 345, "Total Touchdowns": 28}}},
+    {"season": 2017,"ravens":{"scoring":{"Total Points Per Game":31,"Total Points": 387, "Total Touchdowns": 25}},"opponents":{"scoring":{"Total Points Per Game":29,"Total Points": 322, "Total Touchdowns": 36}}},
+    {"season": 2018,"ravens":{"scoring":{"Total Points Per Game":33,"Total Points": 367, "Total Touchdowns": 30}},"opponents":{"scoring":{"Total Points Per Game":35,"Total Points": 366, "Total Touchdowns": 28}}},
+    {"season": 2019,"ravens":{"scoring":{"Total Points Per Game":29,"Total Points": 466, "Total Touchdowns": 49}},"opponents":{"scoring":{"Total Points Per Game":30,"Total Points": 452, "Total Touchdowns": 34}}},
+    {"season": 2020,"ravens":{"scoring":{"Total Points Per Game":28,"Total Points": 421, "Total Touchdowns": 41}},"opponents":{"scoring":{"Total Points Per Game":24,"Total Points": 340, "Total Touchdowns": 28}}},
+    {"season": 2021,"ravens":{"scoring":{"Total Points Per Game":34,"Total Points": 368, "Total Touchdowns": 38}},"opponents":{"scoring":{"Total Points Per Game":25,"Total Points": 355, "Total Touchdowns": 31}}},
+    {"season": 2022,"ravens":{"scoring":{"Total Points Per Game":28,"Total Points": 389, "Total Touchdowns": 31}},"opponents":{"scoring":{"Total Points Per Game":25,"Total Points": 350, "Total Touchdowns": 30}}}
+]
