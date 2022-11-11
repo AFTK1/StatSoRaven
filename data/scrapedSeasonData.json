@@ -1,0 +1,1465 @@
+[
+    {
+        "Year": 2004,
+        "Ravens": {
+            "Scoring": {
+                "TotalPointsPerGame": 19.8,
+                "TotalPoints": 317.0,
+                "TotalTouchdowns": 33.0
+            },
+            "Downs": {
+                "TotalDowns": 260.0,
+                "RushingDowns": 103.0,
+                "PassingDowns": 135.0
+            },
+            "Passing": {
+                "NetPassingYards": 2312.0,
+                "PassingTouchdowns": 13.0,
+                "Interceptions": 11.0
+            },
+            "Rushing": {
+                "RushingAttempts": 491.0,
+                "RushingYards": 2063.0,
+                "YardsPerRushAttempt": 4.2
+            },
+            "Offense": {
+                "TotalOffensivePlays": 991.0,
+                "TotalYards": 4622.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 23.2,
+                "AvgPuntReturnYards": 7.8,
+                "AvgInterceptionReturnYards": 33.3
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 37.7
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 55.0
+            }
+        },
+        "Opponents": {
+            "Scoring": {
+                "TotalPointsPerGame": 12.8,
+                "TotalPoints": 268.0,
+                "TotalTouchdowns": 27.0
+            },
+            "Downs": {
+                "TotalDowns": 273.0,
+                "RushingDowns": 88.0,
+                "PassingDowns": 158.0
+            },
+            "Passing": {
+                "NetPassingYards": 3122.0,
+                "PassingTouchdowns": 14.0,
+                "Interceptions": 21.0
+            },
+            "Rushing": {
+                "RushingAttempts": 469.0,
+                "RushingYards": 1681.0,
+                "YardsPerRushAttempt": 3.6
+            },
+            "Offense": {
+                "TotalOffensivePlays": 1009.0,
+                "TotalYards": 5067.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 20.7,
+                "AvgPuntReturnYards": 10.3,
+                "AvgInterceptionReturnYards": 15.6
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 33.5
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 49.875
+            }
+        }
+    },
+    {
+        "Year": 2005,
+        "Ravens": {
+            "Scoring": {
+                "TotalPointsPerGame": 16.6,
+                "TotalPoints": 265.0,
+                "TotalTouchdowns": 25.0
+            },
+            "Downs": {
+                "TotalDowns": 286.0,
+                "RushingDowns": 97.0,
+                "PassingDowns": 163.0
+            },
+            "Passing": {
+                "NetPassingYards": 3088.0,
+                "PassingTouchdowns": 17.0,
+                "Interceptions": 21.0
+            },
+            "Rushing": {
+                "RushingAttempts": 452.0,
+                "RushingYards": 1605.0,
+                "YardsPerRushAttempt": 3.6
+            },
+            "Offense": {
+                "TotalOffensivePlays": 1056.0,
+                "TotalYards": 4986.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 21.8,
+                "AvgPuntReturnYards": 8.7,
+                "AvgInterceptionReturnYards": 17.4
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 37.7
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 66.0
+            }
+        },
+        "Opponents": {
+            "Scoring": {
+                "TotalPointsPerGame": 14.2,
+                "TotalPoints": 299.0,
+                "TotalTouchdowns": 30.0
+            },
+            "Downs": {
+                "TotalDowns": 277.0,
+                "RushingDowns": 79.0,
+                "PassingDowns": 161.0
+            },
+            "Passing": {
+                "NetPassingYards": 2958.0,
+                "PassingTouchdowns": 18.0,
+                "Interceptions": 11.0
+            },
+            "Rushing": {
+                "RushingAttempts": 431.0,
+                "RushingYards": 1591.0,
+                "YardsPerRushAttempt": 3.7
+            },
+            "Offense": {
+                "TotalOffensivePlays": 998.0,
+                "TotalYards": 4819.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 21.5,
+                "AvgPuntReturnYards": 11.1,
+                "AvgInterceptionReturnYards": 12.2
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 35.7
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 52.75
+            }
+        }
+    },
+    {
+        "Year": 2006,
+        "Ravens": {
+            "Scoring": {
+                "TotalPointsPerGame": 22.1,
+                "TotalPoints": 353.0,
+                "TotalTouchdowns": 38.0
+            },
+            "Downs": {
+                "TotalDowns": 282.0,
+                "RushingDowns": 86.0,
+                "PassingDowns": 179.0
+            },
+            "Passing": {
+                "NetPassingYards": 3435.0,
+                "PassingTouchdowns": 21.0,
+                "Interceptions": 14.0
+            },
+            "Rushing": {
+                "RushingAttempts": 476.0,
+                "RushingYards": 1637.0,
+                "YardsPerRushAttempt": 3.4
+            },
+            "Offense": {
+                "TotalOffensivePlays": 1017.0,
+                "TotalYards": 5172.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 21.8,
+                "AvgPuntReturnYards": 9.2,
+                "AvgInterceptionReturnYards": 19.4
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 38.3
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 54.0
+            }
+        },
+        "Opponents": {
+            "Scoring": {
+                "TotalPointsPerGame": 9.5,
+                "TotalPoints": 199.0,
+                "TotalTouchdowns": 21.0
+            },
+            "Downs": {
+                "TotalDowns": 236.0,
+                "RushingDowns": 59.0,
+                "PassingDowns": 151.0
+            },
+            "Passing": {
+                "NetPassingYards": 3011.0,
+                "PassingTouchdowns": 16.0,
+                "Interceptions": 28.0
+            },
+            "Rushing": {
+                "RushingAttempts": 367.0,
+                "RushingYards": 1214.0,
+                "YardsPerRushAttempt": 3.3
+            },
+            "Offense": {
+                "TotalOffensivePlays": 936.0,
+                "TotalYards": 4643.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 23.2,
+                "AvgPuntReturnYards": 7.8,
+                "AvgInterceptionReturnYards": 10.1
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 40.8
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 36.25
+            }
+        }
+    },
+    {
+        "Year": 2007,
+        "Ravens": {
+            "Scoring": {
+                "TotalPointsPerGame": 17.2,
+                "TotalPoints": 275.0,
+                "TotalTouchdowns": 28.0
+            },
+            "Downs": {
+                "TotalDowns": 291.0,
+                "RushingDowns": 96.0,
+                "PassingDowns": 175.0
+            },
+            "Passing": {
+                "NetPassingYards": 3035.0,
+                "PassingTouchdowns": 13.0,
+                "Interceptions": 14.0
+            },
+            "Rushing": {
+                "RushingAttempts": 446.0,
+                "RushingYards": 1797.0,
+                "YardsPerRushAttempt": 4.0
+            },
+            "Offense": {
+                "TotalOffensivePlays": 1042.0,
+                "TotalYards": 5105.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 23.7,
+                "AvgPuntReturnYards": 9.9,
+                "AvgInterceptionReturnYards": 12.5
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 38.7
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 54.0
+            }
+        },
+        "Opponents": {
+            "Scoring": {
+                "TotalPointsPerGame": 18.2,
+                "TotalPoints": 382.0,
+                "TotalTouchdowns": 39.0
+            },
+            "Downs": {
+                "TotalDowns": 258.0,
+                "RushingDowns": 69.0,
+                "PassingDowns": 162.0
+            },
+            "Passing": {
+                "NetPassingYards": 3557.0,
+                "PassingTouchdowns": 27.0,
+                "Interceptions": 17.0
+            },
+            "Rushing": {
+                "RushingAttempts": 446.0,
+                "RushingYards": 1268.0,
+                "YardsPerRushAttempt": 2.8
+            },
+            "Offense": {
+                "TotalOffensivePlays": 968.0,
+                "TotalYards": 5008.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 23.5,
+                "AvgPuntReturnYards": 9.7,
+                "AvgInterceptionReturnYards": 20.9
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 38.7
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 45.5
+            }
+        }
+    },
+    {
+        "Year": 2008,
+        "Ravens": {
+            "Scoring": {
+                "TotalPointsPerGame": 23.9,
+                "TotalPoints": 383.0,
+                "TotalTouchdowns": 42.0
+            },
+            "Downs": {
+                "TotalDowns": 300.0,
+                "RushingDowns": 132.0,
+                "PassingDowns": 147.0
+            },
+            "Passing": {
+                "NetPassingYards": 2808.0,
+                "PassingTouchdowns": 16.0,
+                "Interceptions": 12.0
+            },
+            "Rushing": {
+                "RushingAttempts": 592.0,
+                "RushingYards": 2376.0,
+                "YardsPerRushAttempt": 4.0
+            },
+            "Offense": {
+                "TotalOffensivePlays": 1058.0,
+                "TotalYards": 5461.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 22.6,
+                "AvgPuntReturnYards": 6.4,
+                "AvgInterceptionReturnYards": 18.3
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 42.0
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 49.0
+            }
+        },
+        "Opponents": {
+            "Scoring": {
+                "TotalPointsPerGame": 11.6,
+                "TotalPoints": 244.0,
+                "TotalTouchdowns": 26.0
+            },
+            "Downs": {
+                "TotalDowns": 228.0,
+                "RushingDowns": 58.0,
+                "PassingDowns": 152.0
+            },
+            "Passing": {
+                "NetPassingYards": 2875.0,
+                "PassingTouchdowns": 17.0,
+                "Interceptions": 26.0
+            },
+            "Rushing": {
+                "RushingAttempts": 366.0,
+                "RushingYards": 1302.0,
+                "YardsPerRushAttempt": 3.6
+            },
+            "Offense": {
+                "TotalOffensivePlays": 928.0,
+                "TotalYards": 4434.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 20.1,
+                "AvgPuntReturnYards": 8.6,
+                "AvgInterceptionReturnYards": 8.7
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 39.1
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 49.5
+            }
+        }
+    },
+    {
+        "Year": 2009,
+        "Ravens": {
+            "Scoring": {
+                "TotalPointsPerGame": 24.4,
+                "TotalPoints": 391.0,
+                "TotalTouchdowns": 47.0
+            },
+            "Downs": {
+                "TotalDowns": 320.0,
+                "RushingDowns": 115.0,
+                "PassingDowns": 187.0
+            },
+            "Passing": {
+                "NetPassingYards": 3419.0,
+                "PassingTouchdowns": 21.0,
+                "Interceptions": 13.0
+            },
+            "Rushing": {
+                "RushingAttempts": 468.0,
+                "RushingYards": 2200.0,
+                "YardsPerRushAttempt": 4.7
+            },
+            "Offense": {
+                "TotalOffensivePlays": 1014.0,
+                "TotalYards": 5837.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 20.3,
+                "AvgPuntReturnYards": 7.6,
+                "AvgInterceptionReturnYards": 15.7
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 39.7
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 68.0
+            }
+        },
+        "Opponents": {
+            "Scoring": {
+                "TotalPointsPerGame": 13.1,
+                "TotalPoints": 261.0,
+                "TotalTouchdowns": 27.0
+            },
+            "Downs": {
+                "TotalDowns": 280.0,
+                "RushingDowns": 82.0,
+                "PassingDowns": 164.0
+            },
+            "Passing": {
+                "NetPassingYards": 3316.0,
+                "PassingTouchdowns": 17.0,
+                "Interceptions": 22.0
+            },
+            "Rushing": {
+                "RushingAttempts": 435.0,
+                "RushingYards": 1492.0,
+                "YardsPerRushAttempt": 3.4
+            },
+            "Offense": {
+                "TotalOffensivePlays": 991.0,
+                "TotalYards": 4998.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 26.2,
+                "AvgPuntReturnYards": 7.4,
+                "AvgInterceptionReturnYards": 15.0
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 39.7
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 46.313
+            }
+        }
+    },
+    {
+        "Year": 2010,
+        "Ravens": {
+            "Scoring": {
+                "TotalPointsPerGame": 22.3,
+                "TotalPoints": 357.0,
+                "TotalTouchdowns": 40.0
+            },
+            "Downs": {
+                "TotalDowns": 303.0,
+                "RushingDowns": 97.0,
+                "PassingDowns": 175.0
+            },
+            "Passing": {
+                "NetPassingYards": 3335.0,
+                "PassingTouchdowns": 25.0,
+                "Interceptions": 10.0
+            },
+            "Rushing": {
+                "RushingAttempts": 487.0,
+                "RushingYards": 1831.0,
+                "YardsPerRushAttempt": 3.8
+            },
+            "Offense": {
+                "TotalOffensivePlays": 1018.0,
+                "TotalYards": 5460.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 26.0,
+                "AvgPuntReturnYards": 8.1,
+                "AvgInterceptionReturnYards": 15.2
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 40.2
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 42.0
+            }
+        },
+        "Opponents": {
+            "Scoring": {
+                "TotalPointsPerGame": 12.9,
+                "TotalPoints": 270.0,
+                "TotalTouchdowns": 27.0
+            },
+            "Downs": {
+                "TotalDowns": 284.0,
+                "RushingDowns": 79.0,
+                "PassingDowns": 187.0
+            },
+            "Passing": {
+                "NetPassingYards": 3599.0,
+                "PassingTouchdowns": 22.0,
+                "Interceptions": 19.0
+            },
+            "Rushing": {
+                "RushingAttempts": 384.0,
+                "RushingYards": 1503.0,
+                "YardsPerRushAttempt": 3.9
+            },
+            "Offense": {
+                "TotalOffensivePlays": 1007.0,
+                "TotalYards": 5292.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 24.7,
+                "AvgPuntReturnYards": 7.4,
+                "AvgInterceptionReturnYards": 19.1
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 40.0
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 61.5
+            }
+        }
+    },
+    {
+        "Year": 2011,
+        "Ravens": {
+            "Scoring": {
+                "TotalPointsPerGame": 23.6,
+                "TotalPoints": 378.0,
+                "TotalTouchdowns": 41.0
+            },
+            "Downs": {
+                "TotalDowns": 312.0,
+                "RushingDowns": 98.0,
+                "PassingDowns": 181.0
+            },
+            "Passing": {
+                "NetPassingYards": 3423.0,
+                "PassingTouchdowns": 21.0,
+                "Interceptions": 12.0
+            },
+            "Rushing": {
+                "RushingAttempts": 459.0,
+                "RushingYards": 1996.0,
+                "YardsPerRushAttempt": 4.3
+            },
+            "Offense": {
+                "TotalOffensivePlays": 1036.0,
+                "TotalYards": 5625.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 29.2,
+                "AvgPuntReturnYards": 11.9,
+                "AvgInterceptionReturnYards": 11.7
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 41.1
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 46.0
+            }
+        },
+        "Opponents": {
+            "Scoring": {
+                "TotalPointsPerGame": 13.3,
+                "TotalPoints": 266.0,
+                "TotalTouchdowns": 26.0
+            },
+            "Downs": {
+                "TotalDowns": 269.0,
+                "RushingDowns": 79.0,
+                "PassingDowns": 166.0
+            },
+            "Passing": {
+                "NetPassingYards": 3140.0,
+                "PassingTouchdowns": 11.0,
+                "Interceptions": 15.0
+            },
+            "Rushing": {
+                "RushingAttempts": 419.0,
+                "RushingYards": 1482.0,
+                "YardsPerRushAttempt": 3.5
+            },
+            "Offense": {
+                "TotalOffensivePlays": 1002.0,
+                "TotalYards": 4912.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 24.9,
+                "AvgPuntReturnYards": 9.6,
+                "AvgInterceptionReturnYards": 13.3
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 39.5
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 64.5
+            }
+        }
+    },
+    {
+        "Year": 2012,
+        "Ravens": {
+            "Scoring": {
+                "TotalPointsPerGame": 24.9,
+                "TotalPoints": 398.0,
+                "TotalTouchdowns": 44.0
+            },
+            "Downs": {
+                "TotalDowns": 314.0,
+                "RushingDowns": 98.0,
+                "PassingDowns": 182.0
+            },
+            "Passing": {
+                "NetPassingYards": 3739.0,
+                "PassingTouchdowns": 22.0,
+                "Interceptions": 11.0
+            },
+            "Rushing": {
+                "RushingAttempts": 444.0,
+                "RushingYards": 1901.0,
+                "YardsPerRushAttempt": 4.3
+            },
+            "Offense": {
+                "TotalOffensivePlays": 1042.0,
+                "TotalYards": 5897.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 23.2,
+                "AvgPuntReturnYards": 7.8,
+                "AvgInterceptionReturnYards": 15.1
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 42.5
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 70.0
+            }
+        },
+        "Opponents": {
+            "Scoring": {
+                "TotalPointsPerGame": 17.2,
+                "TotalPoints": 344.0,
+                "TotalTouchdowns": 33.0
+            },
+            "Downs": {
+                "TotalDowns": 326.0,
+                "RushingDowns": 105.0,
+                "PassingDowns": 187.0
+            },
+            "Passing": {
+                "NetPassingYards": 3650.0,
+                "PassingTouchdowns": 15.0,
+                "Interceptions": 13.0
+            },
+            "Rushing": {
+                "RushingAttempts": 492.0,
+                "RushingYards": 1965.0,
+                "YardsPerRushAttempt": 4.0
+            },
+            "Offense": {
+                "TotalOffensivePlays": 1086.0,
+                "TotalYards": 5865.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 27.3,
+                "AvgPuntReturnYards": 9.4,
+                "AvgInterceptionReturnYards": 21.0
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 41.7
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 58.063
+            }
+        }
+    },
+    {
+        "Year": 2013,
+        "Ravens": {
+            "Scoring": {
+                "TotalPointsPerGame": 20.0,
+                "TotalPoints": 320.0,
+                "TotalTouchdowns": 29.0
+            },
+            "Downs": {
+                "TotalDowns": 295.0,
+                "RushingDowns": 68.0,
+                "PassingDowns": 189.0
+            },
+            "Passing": {
+                "NetPassingYards": 3590.0,
+                "PassingTouchdowns": 19.0,
+                "Interceptions": 23.0
+            },
+            "Rushing": {
+                "RushingAttempts": 423.0,
+                "RushingYards": 1328.0,
+                "YardsPerRushAttempt": 3.1
+            },
+            "Offense": {
+                "TotalOffensivePlays": 1090.0,
+                "TotalYards": 5242.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 23.0,
+                "AvgPuntReturnYards": 9.1,
+                "AvgInterceptionReturnYards": 10.0
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 40.9
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 58.0
+            }
+        },
+        "Opponents": {
+            "Scoring": {
+                "TotalPointsPerGame": 16.8,
+                "TotalPoints": 352.0,
+                "TotalTouchdowns": 37.0
+            },
+            "Downs": {
+                "TotalDowns": 284.0,
+                "RushingDowns": 79.0,
+                "PassingDowns": 176.0
+            },
+            "Passing": {
+                "NetPassingYards": 3681.0,
+                "PassingTouchdowns": 25.0,
+                "Interceptions": 16.0
+            },
+            "Rushing": {
+                "RushingAttempts": 440.0,
+                "RushingYards": 1687.0,
+                "YardsPerRushAttempt": 3.8
+            },
+            "Offense": {
+                "TotalOffensivePlays": 1032.0,
+                "TotalYards": 5625.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 26.4,
+                "AvgPuntReturnYards": 14.2,
+                "AvgInterceptionReturnYards": 9.5
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 39.5
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 74.75
+            }
+        }
+    },
+    {
+        "Year": 2014,
+        "Ravens": {
+            "Scoring": {
+                "TotalPointsPerGame": 25.6,
+                "TotalPoints": 409.0,
+                "TotalTouchdowns": 46.0
+            },
+            "Downs": {
+                "TotalDowns": 345.0,
+                "RushingDowns": 113.0,
+                "PassingDowns": 194.0
+            },
+            "Passing": {
+                "NetPassingYards": 3819.0,
+                "PassingTouchdowns": 27.0,
+                "Interceptions": 12.0
+            },
+            "Rushing": {
+                "RushingAttempts": 448.0,
+                "RushingYards": 2019.0,
+                "YardsPerRushAttempt": 4.5
+            },
+            "Offense": {
+                "TotalOffensivePlays": 1021.0,
+                "TotalYards": 6005.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 23.1,
+                "AvgPuntReturnYards": 7.2,
+                "AvgInterceptionReturnYards": 12.3
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 44.6
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 54.0
+            }
+        },
+        "Opponents": {
+            "Scoring": {
+                "TotalPointsPerGame": 15.1,
+                "TotalPoints": 302.0,
+                "TotalTouchdowns": 30.0
+            },
+            "Downs": {
+                "TotalDowns": 311.0,
+                "RushingDowns": 75.0,
+                "PassingDowns": 205.0
+            },
+            "Passing": {
+                "NetPassingYards": 3979.0,
+                "PassingTouchdowns": 22.0,
+                "Interceptions": 11.0
+            },
+            "Rushing": {
+                "RushingAttempts": 390.0,
+                "RushingYards": 1412.0,
+                "YardsPerRushAttempt": 3.6
+            },
+            "Offense": {
+                "TotalOffensivePlays": 1034.0,
+                "TotalYards": 5753.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 28.3,
+                "AvgPuntReturnYards": 9.1,
+                "AvgInterceptionReturnYards": 12.4
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 42.1
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 62.938
+            }
+        }
+    },
+    {
+        "Year": 2015,
+        "Ravens": {
+            "Scoring": {
+                "TotalPointsPerGame": 20.5,
+                "TotalPoints": 328.0,
+                "TotalTouchdowns": 33.0
+            },
+            "Downs": {
+                "TotalDowns": 323.0,
+                "RushingDowns": 89.0,
+                "PassingDowns": 211.0
+            },
+            "Passing": {
+                "NetPassingYards": 4271.0,
+                "PassingTouchdowns": 21.0,
+                "Interceptions": 21.0
+            },
+            "Rushing": {
+                "RushingAttempts": 383.0,
+                "RushingYards": 1478.0,
+                "YardsPerRushAttempt": 3.9
+            },
+            "Offense": {
+                "TotalOffensivePlays": 1083.0,
+                "TotalYards": 5927.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 25.4,
+                "AvgPuntReturnYards": 5.0,
+                "AvgInterceptionReturnYards": 8.5
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 44.3
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 72.0
+            }
+        },
+        "Opponents": {
+            "Scoring": {
+                "TotalPointsPerGame": 19.1,
+                "TotalPoints": 401.0,
+                "TotalTouchdowns": 45.0
+            },
+            "Downs": {
+                "TotalDowns": 311.0,
+                "RushingDowns": 80.0,
+                "PassingDowns": 189.0
+            },
+            "Passing": {
+                "NetPassingYards": 3737.0,
+                "PassingTouchdowns": 30.0,
+                "Interceptions": 6.0
+            },
+            "Rushing": {
+                "RushingAttempts": 418.0,
+                "RushingYards": 1661.0,
+                "YardsPerRushAttempt": 4.0
+            },
+            "Offense": {
+                "TotalOffensivePlays": 1000.0,
+                "TotalYards": 5618.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 25.2,
+                "AvgPuntReturnYards": 11.3,
+                "AvgInterceptionReturnYards": 16.2
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 40.3
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 46.75
+            }
+        }
+    },
+    {
+        "Year": 2016,
+        "Ravens": {
+            "Scoring": {
+                "TotalPointsPerGame": 21.4,
+                "TotalPoints": 343.0,
+                "TotalTouchdowns": 32.0
+            },
+            "Downs": {
+                "TotalDowns": 316.0,
+                "RushingDowns": 79.0,
+                "PassingDowns": 205.0
+            },
+            "Passing": {
+                "NetPassingYards": 4100.0,
+                "PassingTouchdowns": 20.0,
+                "Interceptions": 16.0
+            },
+            "Rushing": {
+                "RushingAttempts": 367.0,
+                "RushingYards": 1463.0,
+                "YardsPerRushAttempt": 4.0
+            },
+            "Offense": {
+                "TotalOffensivePlays": 1079.0,
+                "TotalYards": 5806.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 20.7,
+                "AvgPuntReturnYards": 11.4,
+                "AvgInterceptionReturnYards": 9.9
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 41.1
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 69.0
+            }
+        },
+        "Opponents": {
+            "Scoring": {
+                "TotalPointsPerGame": 16.0,
+                "TotalPoints": 319.0,
+                "TotalTouchdowns": 39.0
+            },
+            "Downs": {
+                "TotalDowns": 294.0,
+                "RushingDowns": 74.0,
+                "PassingDowns": 190.0
+            },
+            "Passing": {
+                "NetPassingYards": 3724.0,
+                "PassingTouchdowns": 28.0,
+                "Interceptions": 18.0
+            },
+            "Rushing": {
+                "RushingAttempts": 384.0,
+                "RushingYards": 1430.0,
+                "YardsPerRushAttempt": 3.7
+            },
+            "Offense": {
+                "TotalOffensivePlays": 993.0,
+                "TotalYards": 5377.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 22.7,
+                "AvgPuntReturnYards": 7.7,
+                "AvgInterceptionReturnYards": 10.6
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 42.2
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 56.25
+            }
+        }
+    },
+    {
+        "Year": 2017,
+        "Ravens": {
+            "Scoring": {
+                "TotalPointsPerGame": 24.7,
+                "TotalPoints": 395.0,
+                "TotalTouchdowns": 42.0
+            },
+            "Downs": {
+                "TotalDowns": 311.0,
+                "RushingDowns": 111.0,
+                "PassingDowns": 168.0
+            },
+            "Passing": {
+                "NetPassingYards": 3030.0,
+                "PassingTouchdowns": 20.0,
+                "Interceptions": 13.0
+            },
+            "Rushing": {
+                "RushingAttempts": 460.0,
+                "RushingYards": 1856.0,
+                "YardsPerRushAttempt": 4.0
+            },
+            "Offense": {
+                "TotalOffensivePlays": 1054.0,
+                "TotalYards": 5091.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 18.6,
+                "AvgPuntReturnYards": 8.1,
+                "AvgInterceptionReturnYards": 17.5
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 41.0
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 46.0
+            }
+        },
+        "Opponents": {
+            "Scoring": {
+                "TotalPointsPerGame": 15.2,
+                "TotalPoints": 303.0,
+                "TotalTouchdowns": 32.0
+            },
+            "Downs": {
+                "TotalDowns": 296.0,
+                "RushingDowns": 87.0,
+                "PassingDowns": 179.0
+            },
+            "Passing": {
+                "NetPassingYards": 3421.0,
+                "PassingTouchdowns": 18.0,
+                "Interceptions": 22.0
+            },
+            "Rushing": {
+                "RushingAttempts": 435.0,
+                "RushingYards": 1780.0,
+                "YardsPerRushAttempt": 4.1
+            },
+            "Offense": {
+                "TotalOffensivePlays": 1045.0,
+                "TotalYards": 5481.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 27.5,
+                "AvgPuntReturnYards": 10.1,
+                "AvgInterceptionReturnYards": 26.2
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 40.5
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 50.438
+            }
+        }
+    },
+    {
+        "Year": 2018,
+        "Ravens": {
+            "Scoring": {
+                "TotalPointsPerGame": 24.3,
+                "TotalPoints": 389.0,
+                "TotalTouchdowns": 41.0
+            },
+            "Downs": {
+                "TotalDowns": 367.0,
+                "RushingDowns": 153.0,
+                "PassingDowns": 184.0
+            },
+            "Passing": {
+                "NetPassingYards": 3558.0,
+                "PassingTouchdowns": 18.0,
+                "Interceptions": 9.0
+            },
+            "Rushing": {
+                "RushingAttempts": 547.0,
+                "RushingYards": 2441.0,
+                "YardsPerRushAttempt": 4.5
+            },
+            "Offense": {
+                "TotalOffensivePlays": 1135.0,
+                "TotalYards": 6149.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 23.3,
+                "AvgPuntReturnYards": 10.2,
+                "AvgInterceptionReturnYards": 8.3
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 41.4
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 58.0
+            }
+        },
+        "Opponents": {
+            "Scoring": {
+                "TotalPointsPerGame": 14.4,
+                "TotalPoints": 287.0,
+                "TotalTouchdowns": 33.0
+            },
+            "Downs": {
+                "TotalDowns": 286.0,
+                "RushingDowns": 82.0,
+                "PassingDowns": 174.0
+            },
+            "Passing": {
+                "NetPassingYards": 3360.0,
+                "PassingTouchdowns": 21.0,
+                "Interceptions": 12.0
+            },
+            "Rushing": {
+                "RushingAttempts": 354.0,
+                "RushingYards": 1327.0,
+                "YardsPerRushAttempt": 3.7
+            },
+            "Offense": {
+                "TotalOffensivePlays": 974.0,
+                "TotalYards": 4978.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 22.1,
+                "AvgPuntReturnYards": 11.5,
+                "AvgInterceptionReturnYards": 4.3
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 39.1
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 63.563
+            }
+        }
+    },
+    {
+        "Year": 2019,
+        "Ravens": {
+            "Scoring": {
+                "TotalPointsPerGame": 33.1,
+                "TotalPoints": 529.0,
+                "TotalTouchdowns": 64.0
+            },
+            "Downs": {
+                "TotalDowns": 386.0,
+                "RushingDowns": 188.0,
+                "PassingDowns": 171.0
+            },
+            "Passing": {
+                "NetPassingYards": 3225.0,
+                "PassingTouchdowns": 37.0,
+                "Interceptions": 8.0
+            },
+            "Rushing": {
+                "RushingAttempts": 596.0,
+                "RushingYards": 3296.0,
+                "YardsPerRushAttempt": 5.5
+            },
+            "Offense": {
+                "TotalOffensivePlays": 1064.0,
+                "TotalYards": 6646.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 21.5,
+                "AvgPuntReturnYards": 9.5,
+                "AvgInterceptionReturnYards": 19.9
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 41.8
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 54.0
+            }
+        },
+        "Opponents": {
+            "Scoring": {
+                "TotalPointsPerGame": 17.6,
+                "TotalPoints": 282.0,
+                "TotalTouchdowns": 29.0
+            },
+            "Downs": {
+                "TotalDowns": 276.0,
+                "RushingDowns": 74.0,
+                "PassingDowns": 163.0
+            },
+            "Passing": {
+                "NetPassingYards": 3315.0,
+                "PassingTouchdowns": 15.0,
+                "Interceptions": 13.0
+            },
+            "Rushing": {
+                "RushingAttempts": 340.0,
+                "RushingYards": 1494.0,
+                "YardsPerRushAttempt": 4.4
+            },
+            "Offense": {
+                "TotalOffensivePlays": 921.0,
+                "TotalYards": 5077.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 18.3,
+                "AvgPuntReturnYards": 8.2,
+                "AvgInterceptionReturnYards": 3.9
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 43.5
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 49.688
+            }
+        }
+    },
+    {
+        "Year": 2020,
+        "Ravens": {
+            "Scoring": {
+                "TotalPointsPerGame": 29.3,
+                "TotalPoints": 468.0,
+                "TotalTouchdowns": 55.0
+            },
+            "Downs": {
+                "TotalDowns": 327.0,
+                "RushingDowns": 166.0,
+                "PassingDowns": 142.0
+            },
+            "Passing": {
+                "NetPassingYards": 2739.0,
+                "PassingTouchdowns": 27.0,
+                "Interceptions": 11.0
+            },
+            "Rushing": {
+                "RushingAttempts": 555.0,
+                "RushingYards": 3071.0,
+                "YardsPerRushAttempt": 5.5
+            },
+            "Offense": {
+                "TotalOffensivePlays": 993.0,
+                "TotalYards": 5990.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 21.1,
+                "AvgPuntReturnYards": 5.7,
+                "AvgInterceptionReturnYards": 7.8
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 42.6
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 60.0
+            }
+        },
+        "Opponents": {
+            "Scoring": {
+                "TotalPointsPerGame": 18.9,
+                "TotalPoints": 303.0,
+                "TotalTouchdowns": 37.0
+            },
+            "Downs": {
+                "TotalDowns": 347.0,
+                "RushingDowns": 96.0,
+                "PassingDowns": 213.0
+            },
+            "Passing": {
+                "NetPassingYards": 3536.0,
+                "PassingTouchdowns": 22.0,
+                "Interceptions": 10.0
+            },
+            "Rushing": {
+                "RushingAttempts": 382.0,
+                "RushingYards": 1740.0,
+                "YardsPerRushAttempt": 4.6
+            },
+            "Offense": {
+                "TotalOffensivePlays": 1017.0,
+                "TotalYards": 5548.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 26.7,
+                "AvgPuntReturnYards": 9.0,
+                "AvgInterceptionReturnYards": 5.3
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 42.5
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 40.375
+            }
+        }
+    },
+    {
+        "Year": 2021,
+        "Ravens": {
+            "Scoring": {
+                "TotalPointsPerGame": 22.8,
+                "TotalPoints": 387.0,
+                "TotalTouchdowns": 40.0
+            },
+            "Downs": {
+                "TotalDowns": 394.0,
+                "RushingDowns": 159.0,
+                "PassingDowns": 209.0
+            },
+            "Passing": {
+                "NetPassingYards": 3961.0,
+                "PassingTouchdowns": 21.0,
+                "Interceptions": 18.0
+            },
+            "Rushing": {
+                "RushingAttempts": 517.0,
+                "RushingYards": 2479.0,
+                "YardsPerRushAttempt": 4.8
+            },
+            "Offense": {
+                "TotalOffensivePlays": 1185.0,
+                "TotalYards": 6746.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 23.0,
+                "AvgPuntReturnYards": 7.4,
+                "AvgInterceptionReturnYards": 4.2
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 41.1
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 50.0
+            }
+        },
+        "Opponents": {
+            "Scoring": {
+                "TotalPointsPerGame": 23.1,
+                "TotalPoints": 392.0,
+                "TotalTouchdowns": 48.0
+            },
+            "Downs": {
+                "TotalDowns": 340.0,
+                "RushingDowns": 81.0,
+                "PassingDowns": 232.0
+            },
+            "Passing": {
+                "NetPassingYards": 4742.0,
+                "PassingTouchdowns": 31.0,
+                "Interceptions": 9.0
+            },
+            "Rushing": {
+                "RushingAttempts": 378.0,
+                "RushingYards": 1436.0,
+                "YardsPerRushAttempt": 3.8
+            },
+            "Offense": {
+                "TotalOffensivePlays": 1033.0,
+                "TotalYards": 6422.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 18.6,
+                "AvgPuntReturnYards": 13.8,
+                "AvgInterceptionReturnYards": 8.7
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 41.3
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 51.882
+            }
+        }
+    },
+    {
+        "Year": 2022,
+        "Ravens": {
+            "Scoring": {
+                "TotalPointsPerGame": 26.1,
+                "TotalPoints": 235.0,
+                "TotalTouchdowns": 26.0
+            },
+            "Downs": {
+                "TotalDowns": 189.0,
+                "RushingDowns": 90.0,
+                "PassingDowns": 86.0
+            },
+            "Passing": {
+                "NetPassingYards": 1681.0,
+                "PassingTouchdowns": 16.0,
+                "Interceptions": 6.0
+            },
+            "Rushing": {
+                "RushingAttempts": 274.0,
+                "RushingYards": 1513.0,
+                "YardsPerRushAttempt": 5.5
+            },
+            "Offense": {
+                "TotalOffensivePlays": 551.0,
+                "TotalYards": 3281.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 29.3,
+                "AvgPuntReturnYards": 9.3,
+                "AvgInterceptionReturnYards": 9.2
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 44.6
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 46.0
+            }
+        },
+        "Opponents": {
+            "Scoring": {
+                "TotalPointsPerGame": 21.8,
+                "TotalPoints": 196.0,
+                "TotalTouchdowns": 22.0
+            },
+            "Downs": {
+                "TotalDowns": 184.0,
+                "RushingDowns": 51.0,
+                "PassingDowns": 118.0
+            },
+            "Passing": {
+                "NetPassingYards": 2329.0,
+                "PassingTouchdowns": 13.0,
+                "Interceptions": 9.0
+            },
+            "Rushing": {
+                "RushingAttempts": 194.0,
+                "RushingYards": 828.0,
+                "YardsPerRushAttempt": 4.3
+            },
+            "Offense": {
+                "TotalOffensivePlays": 561.0,
+                "TotalYards": 3336.0
+            },
+            "Returns": {
+                "AvgKickoffReturnYards": 24.5,
+                "AvgPuntReturnYards": 15.1,
+                "AvgInterceptionReturnYards": 7.0
+            },
+            "Kicking": {
+                "NetAvgPuntYards": 41.6
+            },
+            "Penalties": {
+                "AvgPerGameYDS": 38.222
+            }
+        }
+    }
+]

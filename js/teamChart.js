@@ -21,12 +21,12 @@ class TeamChart {
         this.categories = {
             "Scoring": ["Total Points Per Game", "Total Points", "Total Touchdowns"],
             "1st Downs": ["Total 1st Downs", "Rushing 1st Downs", "Passing 1st Downs"],
-            "Passing": ["Net Passing Yards", "Yards per Pass Attempt", "Passing Touchdowns", "Interceptions"],
-            "Rushing": ["Rushing Attempts", "Rushing Yards", "Rushing Touchdowns"],
-            "Offense": ["Total Offensive Plays", "Total Yards", "Yards Per Game"],
-            "Returns": ["Total Kickoffs", "Total Punts", "Total Interceptions"],
-            "Kicking": ["Net Average Punt Yards"],
-            "Penalties": ["Total Yards", "Avg Per Game(YDS)"]
+            "Passing": ["Net Passing Yards","Passing Touchdowns", "Interceptions"],
+            "Rushing": ["Rushing Attempts", "Rushing Yards", "Yards Per Rush Attempt"],
+            "Offense": ["Total Offensive Plays", "Total Yards"],
+            "Returns": ["Avg Kickoff Return Yards", "Avg Punt Return Yards", "Avg Interception Return Yards"],
+            "Kicking": ["Net Avg Punt Yards"],
+            "Penalties": ["Avg Per Game YDS"]
         }
 
         this.scaleY = d3.scaleLinear()
@@ -34,7 +34,8 @@ class TeamChart {
             .range([chart.height - padding.bottom, padding.top])
 
         this.scaleX = d3.scaleBand()
-            .domain([2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022])
+            .domain([2004,2005,2006,2007,2008,2009,2010,2011,2012,2013, 
+                    2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022])
             .range([padding.left, chart.width - padding.right])
 
         this.attachCategoryHandler()
@@ -128,11 +129,11 @@ class TeamChart {
                     .text((d) => d)
                     .attr('class', 'dropdown-item')
 
-                that.attachStatisticHandler(stats)
+                that.attachStatisticHandler(stats, this.text)
             })
     }
 
-    attachStatisticHandler(stats) {
+    attachStatisticHandler(stats, category) {
         let statisticDropDown = d3.select(".dropdown" && ".statistic")
         let statisticDropDownItems = statisticDropDown.selectAll('.dropdown-item')
 
@@ -142,23 +143,42 @@ class TeamChart {
                 statisticDropDown.select('.btn')
                     .text(this.text)
 
-                that.updateChartData(this.text)
+                that.updateChartData(this.text, category)
             })
     }
 
-    updateChartData(selection) {
+    updateChartData(selection, category) {
+
+        selection = selection.replace(/\s/g,"")
+        console.log(category)
         console.log(selection)
-        var ravensData = this.chartData.map(function (d) {
-            return {
-                x: d.season,
-                y: d.ravens.scoring[selection]
+
+        if(category === "1st Downs"){
+            category = "Downs"
+            if(selection === "Total 1st Downs"){
+                selection = "TotalDowns"
             }
+            else if(selection === "Rushing 1st Downs"){
+                selection = "RushingDowns"
+            }
+            else{
+                selection = "PassingDowns"
+            }
+        }
+        
+        var ravensData = this.chartData.map(function (d) {
+            //console.log(d)
+            return {
+                x: d.Year,
+                y: d.Ravens[category][selection]
+            }
+            
         })
 
         var opponentsData = this.chartData.map(function (d) {
             return {
-                x: d.season,
-                y: d.opponents.scoring[selection]
+                x: d.Year,
+                y: d.Opponents[category][selection]
             }
         })
 
