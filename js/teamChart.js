@@ -36,7 +36,7 @@ class TeamChart {
         this.scaleX = d3.scaleBand()
             .domain([2004,2005,2006,2007,2008,2009,2010,2011,2012,2013, 
                     2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022])
-            .range([padding.left, chart.width - padding.right])
+            .range([padding.left, chart.width - padding.right]).padding(-1)
 
         this.attachCategoryHandler()
         this.drawAxis()
@@ -112,6 +112,10 @@ class TeamChart {
         let that = this
         categoryDropDownItems
             .on('click', function () {
+
+                that.svg.selectAll('.chartPath').remove()
+
+
                 categoryDropDown.select('.btn')
                     .text(this.text)
 
@@ -130,6 +134,7 @@ class TeamChart {
                     .attr('class', 'dropdown-item')
 
                 that.attachStatisticHandler(stats, this.text)
+
             })
     }
 
