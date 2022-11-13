@@ -1,5 +1,5 @@
 const padding = {
-    left: 30,
+    left: 50,
     right: 15,
     top: 15,
     bottom: 50
@@ -208,7 +208,7 @@ class TeamChart {
             .attr("stroke", "purple")
             .attr("stroke-width", 3)
             .attr("d", d3.line()
-                .x((d) => { return this.scaleX(d.x) + 46 })
+                .x((d) => { return this.scaleX(d.x) + 45})
                 .y((d) => { return this.scaleY(d.y) })
             )
             .attr('class', 'chartPath')
@@ -219,7 +219,7 @@ class TeamChart {
             .attr("stroke", "red")
             .attr("stroke-width", 3)
             .attr("d", d3.line()
-                .x((d) => { return this.scaleX(d.x) + 46 })
+                .x((d) => { return this.scaleX(d.x) + 45 })
                 .y((d) => { return this.scaleY(d.y) })
             )
             .attr('class', 'chartPath')
@@ -251,7 +251,7 @@ class TeamChart {
             .attr("fill", "none")
             .style("opacity", .25)
             .attr("d", d3.area()
-                .x((d) => { return this.scaleX(d.x) + 46 })
+                .x((d) => { return this.scaleX(d.x) + 45 })
                 .y0(549)
                 .y1((d) => { return this.scaleY(d.y) })
             )
@@ -263,7 +263,7 @@ class TeamChart {
             .attr("fill", "none")
             .style("opacity", .25)
             .attr("d", d3.area()
-                .x((d) => { return this.scaleX(d.x) + 46 })
+                .x((d) => { return this.scaleX(d.x) + 45 })
                 .y0(549)
                 .y1((d) => { return this.scaleY(d.y) })
             )
