@@ -26,6 +26,7 @@ class PlayerChart {
             return d.Year
         })
 
+        this.newRange = []
         this.currentRange = []
 
         this.svg = d3.selectAll("#playerChart")
@@ -107,6 +108,8 @@ class PlayerChart {
                 firstSeasonButton
                     .text(startingyear)
 
+                that.svg.selectAll('rect').remove()
+
                 secondSeasonButton
                     .text('Season')
 
@@ -120,7 +123,7 @@ class PlayerChart {
                     return +startingyear <= +d
                 })
 
-                that.currentRange = followingYears
+                that.newRange = followingYears
 
                 let items = seasonDropdowns.selectAll('.secondSeasonList')
 
@@ -149,13 +152,23 @@ class PlayerChart {
         secondSeasonList
             .on('click', function () {
                 //that.svg.selectAll('.chartPath').remove()
+
+                that.svg.selectAll('rect').remove()
+                that.svg.selectAll('.tick').remove()
+
+                d3.select(".dropdown" && ".playerCategory").select('.btn')
+                    .text('Category')
+
+                d3.select(".dropdown" && ".playerStatistic").select('.btn')
+                    .text('Statistic')
+
                 let endingYear = this.text
                 secondSeasonButton
                     .text(endingYear)
 
-                    that.currentRange  = that.currentRange.filter(function (d) {
-                        return +endingYear >= +d
-                    })
+                that.currentRange = that.newRange.filter(function (d) {
+                    return +endingYear >= +d
+                })
             })
     }
 
@@ -221,15 +234,15 @@ class PlayerChart {
 
         var selectedData = []
         dataInRange.forEach(season => {
-            selectedData = [...selectedData,...season[category]]
+            selectedData = [...selectedData, ...season[category]]
         });
 
-        var newData = selectedData.map(function (d){
+        var newData = selectedData.map(function (d) {
             var stringArr = d.Name.split(" ")
-            var dx =  stringArr[1] + " " + stringArr[stringArr.length-1]
+            var dx = stringArr[1] + " " + stringArr[stringArr.length - 1]
             return {
-                x:dx,
-                y:d[selection]
+                x: dx,
+                y: d[selection]
             }
         })
 
@@ -259,7 +272,7 @@ class PlayerChart {
             .append('rect')
             .attr('fill', 'rgb(141, 60, 207)')
             .attr('x', function (d) { return that.scaleX(d.x) })
-            .attr('y', function (d) { return +d.y < 0 ? 0 : that.scaleY(d.y)})
+            .attr('y', function (d) { return +d.y < 0 ? 0 : that.scaleY(d.y) })
             .attr('width', that.scaleX.bandwidth())
             .attr('height', function (d) { return +d.y < 0 ? 0 : ((that.chart.height - that.padding.bottom) - (that.scaleY(d.y))) })
     }
