@@ -32,7 +32,7 @@
     <div class="row mb-2">
         <div class="col-2 themed-grid-col center vertical-align-parent">
             <div class="vertical-align-child">
-            <div class="dropdown category">
+            <div class="dropdown teamCategory">
                 <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Category
                 </button>
@@ -47,7 +47,7 @@
                   <a class="dropdown-item" >Penalties</a>
                 </div>
               </div>
-              <div class="dropdown statistic">
+              <div class="dropdown teamStatistic">
                 <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Statistic
                 </button>
@@ -73,32 +73,45 @@
   <div class="container mb-4">
     <h2 class="mb-4">Player Stats</h2>
   <div class="row mb-2">
-    <div class="col-2 themed-grid-col vertical-align-parent">
+    <div class="col-3 themed-grid-col center vertical-align-parent">
         <div class="vertical-align-child">
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown button
+          <div class="dropdown season">
+            <button class="btn btn-secondary dropdown-toggle firstSeasonButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Season
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-menu menu-scroll firstSeasonList" aria-labelledby="dropdownMenuButton">
+            </div>
+                            to
+            <button class="btn btn-secondary dropdown-toggle secondSeasonButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Season
+            </button>
+            <div class="dropdown-menu menu-scroll secondSeasonList" aria-labelledby="dropdownMenuButton">
             </div>
           </div>
-          <div class="dropdown">
+          <div style="height:25px;"></div>
+        <div class="dropdown playerCategory">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown button
+              Category
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+              <a class="dropdown-item">Passing</a>
+              <a class="dropdown-item">Rushing</a>
+              <a class="dropdown-item">Receiving</a>
+              <a class="dropdown-item">Defense</a>
+              <a class="dropdown-item">Scoring</a>
+            </div>
+          </div>
+          <div class="dropdown playerStatistic">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Statistic
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             </div>
           </div>
     </div>
 </div>
-    <div class="col-6 themed-grid-col">Insert Player Chart Here</div>
-    <div class="col-4 themed-grid-col">Insert Player Table Here</div>
+    <div class="col-6 themed-grid-col"><svg id="playerChart"></svg></div>
+    <div class="col-3 themed-grid-col">Insert Player Table Here</div>
   </div>
 </div>
 </body>

@@ -1,20 +1,24 @@
-const padding = {
-    left: 50,
-    right: 15,
-    top: 15,
-    bottom: 50
-}
-const chart = {
-    width: 850,
-    height: 600
-}
 class TeamChart {
     constructor(data) {
+
         this.chartData = [...data[0]]
+
+        this.padding = {
+            left: 50,
+            right: 15,
+            top: 15,
+            bottom: 50
+        }
+        this.chart = {
+            width: 850,
+            height: 600
+        }
+
+        
 
         this.svg = d3.selectAll("#teamChart")
             .attr("width", "100%")
-            .attr("height", chart.height)
+            .attr("height", this.chart.height)
 
 
         this.categories = {
@@ -30,13 +34,12 @@ class TeamChart {
 
         this.isAreaShowing = false
         this.scaleY = d3.scaleLinear()
-            .domain([0, 45])
-            .range([chart.height - padding.bottom, padding.top])
+            .range([this.chart.height - this.padding.bottom, this.padding.top])
 
         this.scaleX = d3.scaleBand()
             .domain([2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013,
                 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022])
-            .range([padding.left, chart.width - padding.right]).padding(-1)
+            .range([this.padding.left, this.chart.width - this.padding.right]).padding(-1)
 
         this.attachCategoryHandler()
         this.drawAxis()
@@ -52,19 +55,19 @@ class TeamChart {
         this.svg.selectAll('text,.tick').remove()
 
         this.svg.append('text')
-            .attr("x", chart.width / 2)
-            .attr("y", chart.height - 5)
+            .attr("x", this.chart.width / 2)
+            .attr("y", this.chart.height - 5)
             .text("Season")
 
 
         this.svg.append('g')
-            .attr('transform', 'translate(' + padding.left + ',0)')
+            .attr('transform', 'translate(' + this.padding.left + ',0)')
             .transition()
             .duration(1500)
             .call(y_axis)
 
         this.svg.append('g')
-            .attr('transform', 'translate(0,' + (chart.height - padding.bottom) + ')')
+            .attr('transform', 'translate(0,' + (this.chart.height - this.padding.bottom) + ')')
             .transition()
             .duration(1500)
             .call(x_axis)
@@ -77,34 +80,32 @@ class TeamChart {
 
         legend.append('text')
             .text('Ravens')
-            .attr('x', chart.width + 50)
-            .attr('y', chart.height / 2)
+            .attr('x', this.chart.width + 50)
+            .attr('y', this.chart.height / 2)
 
         legend.append('text')
             .text('Opponents')
-            .attr('x', chart.width + 50)
-            .attr('y', (chart.height / 2) + 20)
+            .attr('x', this.chart.width + 50)
+            .attr('y', (this.chart.height / 2) + 20)
 
         legend.append('rect')
-            .attr('x', chart.width + 30)
-            .attr('y', (chart.height / 2) - 10)
+            .attr('x', this.chart.width + 30)
+            .attr('y', (this.chart.height / 2) - 10)
             .attr('width', 10)
             .attr('height', 10)
             .attr('fill', 'purple');
 
         legend.append('rect')
-            .attr('x', chart.width + 30)
-            .attr('y', (chart.height / 2) + 10)
+            .attr('x', this.chart.width + 30)
+            .attr('y', (this.chart.height / 2) + 10)
             .attr('width', 10)
             .attr('height', 10)
             .attr('fill', 'red');
-
-
     }
 
     attachCategoryHandler() {
-        let categoryDropDown = d3.select(".dropdown" && ".category")
-        let statisticDropDown = d3.select(".dropdown" && ".statistic")
+        let categoryDropDown = d3.select(".dropdown" && ".teamCategory")
+        let statisticDropDown = d3.select(".dropdown" && ".teamStatistic")
         let categoryDropDownItems = categoryDropDown.selectAll('.dropdown-item')
 
         let categories = this.categories
@@ -139,7 +140,7 @@ class TeamChart {
     }
 
     attachStatisticHandler(stats, category) {
-        let statisticDropDown = d3.select(".dropdown" && ".statistic")
+        let statisticDropDown = d3.select(".dropdown" && ".teamStatistic")
         let statisticDropDownItems = statisticDropDown.selectAll('.dropdown-item')
 
         let that = this
@@ -249,7 +250,7 @@ class TeamChart {
         var ravensArea = this.svg.append('path')
             .datum(ravensData)
             .attr("fill", "none")
-            .style("opacity", .25)
+            .style("opacity", .5)
             .attr("d", d3.area()
                 .x((d) => { return this.scaleX(d.x) + 45 })
                 .y0(549)
@@ -261,7 +262,7 @@ class TeamChart {
         var opponentsArea = this.svg.append('path')
             .datum(opponentsData)
             .attr("fill", "none")
-            .style("opacity", .25)
+            .style("opacity", .5)
             .attr("d", d3.area()
                 .x((d) => { return this.scaleX(d.x) + 45 })
                 .y0(549)
@@ -280,7 +281,7 @@ class TeamChart {
 
                 if (isAreaShowing) {
                     ravensArea
-                        .attr("fill", "purple")
+                        .attr("fill", "green")
 
                     opponentsArea
                         .attr("fill", "red")

@@ -3,7 +3,7 @@
     font-family: 'Poppins', sans-serif;
 }
 .banner {
-    background-color:rgb(124, 48, 187);
+    background-color:rgb(141, 60, 207);
     color:rgb(255, 255, 255);
 }
 
@@ -71,7 +71,7 @@ h2 {
     content: "";
     height: 23px;
     width: 23px;
-    left: 5px;
+    left: 4px;
     bottom: 4px;
     background-color: white;
     -webkit-transition: .4s;
@@ -79,7 +79,7 @@ h2 {
   }
   
   input:checked+.slider {
-    background-color: #9454dd;
+    background-color: rgb(141, 60, 207);
   }
   
   input:focus+.slider {
@@ -101,4 +101,9 @@ h2 {
   
   .slider.round:before {
     border-radius: 50%;
+  }
+
+  .menu-scroll {
+    max-height: 150px;
+    overflow: scroll;
   }
