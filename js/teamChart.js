@@ -11,7 +11,6 @@ const chart = {
 class TeamChart {
     constructor(data) {
         this.chartData = [...data[0]]
-        console.log(data)
 
         this.svg = d3.selectAll("#teamChart")
             .attr("width", "100%")
@@ -21,7 +20,7 @@ class TeamChart {
         this.categories = {
             "Scoring": ["Total Points Per Game", "Total Points", "Total Touchdowns"],
             "1st Downs": ["Total 1st Downs", "Rushing 1st Downs", "Passing 1st Downs"],
-            "Passing": ["Net Passing Yards","Passing Touchdowns", "Interceptions"],
+            "Passing": ["Net Passing Yards", "Passing Touchdowns", "Interceptions"],
             "Rushing": ["Rushing Attempts", "Rushing Yards", "Yards Per Rush Attempt"],
             "Offense": ["Total Offensive Plays", "Total Yards"],
             "Returns": ["Avg Kickoff Return Yards", "Avg Punt Return Yards", "Avg Interception Return Yards"],
@@ -29,13 +28,14 @@ class TeamChart {
             "Penalties": ["Avg Per Game YDS"]
         }
 
+        this.isAreaShowing = false
         this.scaleY = d3.scaleLinear()
             .domain([0, 45])
             .range([chart.height - padding.bottom, padding.top])
 
         this.scaleX = d3.scaleBand()
-            .domain([2004,2005,2006,2007,2008,2009,2010,2011,2012,2013, 
-                    2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022])
+            .domain([2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013,
+                2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022])
             .range([padding.left, chart.width - padding.right]).padding(-1)
 
         this.attachCategoryHandler()
@@ -115,14 +115,14 @@ class TeamChart {
 
                 that.svg.selectAll('.chartPath').remove()
 
-
+                document.getElementById("toggle").checked = false
                 categoryDropDown.select('.btn')
                     .text(this.text)
 
                 let stats = categories[this.text]
 
                 let items = statisticDropDown.select(".dropdown-menu")
-                    
+
 
                 items.selectAll('a').remove()
 
@@ -143,41 +143,44 @@ class TeamChart {
         let statisticDropDownItems = statisticDropDown.selectAll('.dropdown-item')
 
         let that = this
+
         statisticDropDownItems
             .on('click', function () {
+                document.getElementById("toggle").checked = false
+
                 statisticDropDown.select('.btn')
                     .text(this.text)
 
                 that.updateChartData(this.text, category)
             })
+
+
     }
 
     updateChartData(selection, category) {
 
-        selection = selection.replace(/\s/g,"")
-        console.log(category)
-        console.log(selection)
+        selection = selection.replace(/\s/g, "")
 
-        if(category === "1st Downs"){
+        if (category === "1st Downs") {
             category = "Downs"
-            if(selection === "Total 1st Downs"){
+            if (selection === "Total 1st Downs") {
                 selection = "TotalDowns"
             }
-            else if(selection === "Rushing 1st Downs"){
+            else if (selection === "Rushing 1st Downs") {
                 selection = "RushingDowns"
             }
-            else{
+            else {
                 selection = "PassingDowns"
             }
         }
-        
+
         var ravensData = this.chartData.map(function (d) {
             //console.log(d)
             return {
                 x: d.Year,
                 y: d.Ravens[category][selection]
             }
-            
+
         })
 
         var opponentsData = this.chartData.map(function (d) {
@@ -192,7 +195,7 @@ class TeamChart {
 
     drawChart(ravensData, opponentsData) {
         var allData = ravensData.concat(opponentsData)
-        console.log(allData)
+
         this.scaleY
             .domain([d3.min(allData, function (d) { return d.y }), d3.max(allData, function (d) { return d.y })])
 
@@ -203,9 +206,9 @@ class TeamChart {
             .datum(ravensData)
             .attr("fill", "none")
             .attr("stroke", "purple")
-            .attr("stroke-width", 5)
+            .attr("stroke-width", 3)
             .attr("d", d3.line()
-                .x((d) => { return this.scaleX(d.x) + 45 })
+                .x((d) => { return this.scaleX(d.x) + 46 })
                 .y((d) => { return this.scaleY(d.y) })
             )
             .attr('class', 'chartPath')
@@ -214,12 +217,13 @@ class TeamChart {
             .datum(opponentsData)
             .attr("fill", "none")
             .attr("stroke", "red")
-            .attr("stroke-width", 5)
+            .attr("stroke-width", 3)
             .attr("d", d3.line()
-                .x((d) => { return this.scaleX(d.x) + 45 })
+                .x((d) => { return this.scaleX(d.x) + 46 })
                 .y((d) => { return this.scaleY(d.y) })
             )
             .attr('class', 'chartPath')
+
 
         const ravensPathLength = ravensPath.node().getTotalLength()
         const opponentsPathLength = opponentsPath.node().getTotalLength()
@@ -239,5 +243,57 @@ class TeamChart {
             .ease(d3.easeLinear)
             .attr("stroke-dashoffset", 0)
             .duration(1500)
+
+
+        
+        var ravensArea = this.svg.append('path')
+            .datum(ravensData)
+            .attr("fill", "none")
+            .style("opacity", .25)
+            .attr("d", d3.area()
+                .x((d) => { return this.scaleX(d.x) + 46 })
+                .y0(549)
+                .y1((d) => { return this.scaleY(d.y) })
+            )
+            .attr('id', 'ravensArea')
+            .attr('class', 'chartPath')
+
+        var opponentsArea = this.svg.append('path')
+            .datum(opponentsData)
+            .attr("fill", "none")
+            .style("opacity", .25)
+            .attr("d", d3.area()
+                .x((d) => { return this.scaleX(d.x) + 46 })
+                .y0(549)
+                .y1((d) => { return this.scaleY(d.y) })
+            )
+            .attr('id', 'opponentArea')
+            .attr('class', 'chartPath')
+
+        let isAreaShowing = this.isAreaShowing
+
+        d3.select(".slider")
+            .on('click', function () {
+                console.log("switch")
+
+                isAreaShowing = !isAreaShowing
+
+                if (isAreaShowing) {
+                    ravensArea
+                        .attr("fill", "purple")
+
+                    opponentsArea
+                        .attr("fill", "red")
+                }
+                else {
+                    ravensArea
+                        .attr("fill", "none")
+
+                    opponentsArea
+                        .attr("fill", "none")
+                }
+
+            })
+
     }
 }
