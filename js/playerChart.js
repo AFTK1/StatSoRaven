@@ -10,7 +10,7 @@ class PlayerChart {
             bottom: 100
         }
         this.chart = {
-            width: 625,
+            width: 750,
             height: 600
         }
 
@@ -250,13 +250,14 @@ class PlayerChart {
     }
 
     drawChart(data) {
+        var filteredData = data.filter(function(d){return d.y > 0})
         this.scaleX
-            .domain(data.map(function (d) {
+            .domain(filteredData.map(function (d) {
                 return d.x
             }))
 
         this.scaleY
-            .domain([0, d3.max(data, function (d) {
+            .domain([0, d3.max(filteredData, function (d) {
                 return d.y
             })])
 
@@ -264,16 +265,39 @@ class PlayerChart {
 
         this.svg.selectAll("rect")
             .remove().exit()
-        console.log(data)
+
         let that = this
-        this.svg.selectAll('rect')
-            .data(data)
-            .enter()
-            .append('rect')
-            .attr('fill', 'rgb(141, 60, 207)')
-            .attr('x', function (d) { return that.scaleX(d.x) })
-            .attr('y', function (d) { return +d.y < 0 ? 0 : that.scaleY(d.y) })
-            .attr('width', that.scaleX.bandwidth())
-            .attr('height', function (d) { return +d.y < 0 ? 0 : ((that.chart.height - that.padding.bottom) - (that.scaleY(d.y))) })
+        
+        console.log(filteredData.length)
+        if (filteredData.length > 150) {
+            this.svg.selectAll('rect')
+                .data(filteredData)
+                .enter()
+                .append('rect')
+                .attr('fill', 'rgb(141, 60, 207)')
+                .attr('x', function (d) { return that.scaleX(d.x) })
+                .attr('y', function (d) { return +d.y < 0 ? 0 : that.scaleY(d.y) })
+                .attr('width', that.scaleX.bandwidth())
+                .attr('height', function (d) { return +d.y < 0 ? 0 : ((that.chart.height - that.padding.bottom) - (that.scaleY(d.y))) })
+        }
+        else {
+            this.svg.selectAll('rect')
+                .data(filteredData)
+                .enter()
+                .append('rect')
+                .attr('fill', 'rgb(141, 60, 207)')
+                .attr('x', function (d) { return that.scaleX(d.x) })
+                .attr('y', function (d) { return that.scaleY(0) })
+                .attr('width', that.scaleX.bandwidth())
+                .attr('height', function (d) { return +d.y < 0 ? 0 : ((that.chart.height - that.padding.bottom) - (that.scaleY(0))) })
+
+            this.svg.selectAll("rect")
+                .transition()
+                .duration(500)
+                .attr("y", function (d) { return +d.y < 0 ? 0 : that.scaleY(d.y) })
+                .attr("height", function (d) { return +d.y < 0 ? 0 : ((that.chart.height - that.padding.bottom) - (that.scaleY(d.y))) })
+                .delay(function (d, i) { return (i * 25) })
+        }
+
     }
 }
