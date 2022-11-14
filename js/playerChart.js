@@ -7,7 +7,7 @@ class PlayerChart {
             left: 50,
             right: 30,
             top: 15,
-            bottom: 100
+            bottom: 130
         }
         this.chart = {
             width: 750,
@@ -74,8 +74,8 @@ class PlayerChart {
             .duration(1500)
             .call(x_axis)
             .selectAll("text")
-            .attr("y", 8)
-            .attr("x", -8)
+            .attr("y", 0)
+            .attr("x", -10)
             .attr("dy", ".35em")
             .attr("transform", "rotate(-90)")
             .style("text-anchor", "end");
@@ -268,7 +268,7 @@ class PlayerChart {
 
         let that = this
         
-        console.log(filteredData.length)
+        console.log(filteredData)
         if (filteredData.length > 150) {
             this.svg.selectAll('rect')
                 .data(filteredData)
