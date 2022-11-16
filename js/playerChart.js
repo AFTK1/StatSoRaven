@@ -262,9 +262,6 @@ class PlayerChart {
 
                 that.svg.selectAll('rect').remove()
 
-                secondSeasonButton
-                    .text('Season')
-
                 that.firstYear = +firstYear
 
                 that.updateChartData(that.selection, that.category)
