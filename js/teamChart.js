@@ -157,7 +157,7 @@ class TeamChart {
         statisticDropDownItems
             .on('click', function () {
                 document.getElementById("toggle").checked = false            
-
+                d3.select(".dropdown" && ".teamStatistic").select('.btn').text(this.text)
                 that.updateChartData(this.text, category)
             })
 
