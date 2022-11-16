@@ -22,6 +22,7 @@ class PlayerChart {
             "Scoring": ["Rushing Touchdowns", "Receiving Touchdowns", "Return Touchdowns", "Total Touchdowns", "Total Points"]
         }
 
+        this.category = "Passing"
         this.selection = "Completions"
         this.isRangeSelected = true
         this.seasons = this.chartData.map(function (d) {
@@ -54,6 +55,7 @@ class PlayerChart {
 
         this.attachSeasonHandler()
         this.attachSeasonSpecificHandler()
+        this.secondSeasonSpecificHandler()
         this.attachCategoryHandler()
         this.attatchArrowHandler()
         this.drawAxis()
@@ -77,6 +79,8 @@ class PlayerChart {
                         .classed("disabled", true)
 
                     that.isRangeSelected = false
+
+                    that.updateChartData(that.selection, that.category)
                 }
                 else {
 
@@ -86,7 +90,9 @@ class PlayerChart {
                     rangeDropdowns
                         .classed("disabled", false)
 
-                        that.isRangeSelected = true
+                    that.isRangeSelected = true
+
+                    that.updateChartData(that.selection, that.category)
                 }
 
             })
@@ -162,11 +168,11 @@ class PlayerChart {
                 secondSeasonButton
                     .text('Season')
 
-                d3.select(".dropdown" && ".playerCategory").select('.btn')
-                    .text('Category')
+                // d3.select(".dropdown" && ".playerCategory").select('.btn')
+                //     .text('Category')
 
-                d3.select(".dropdown" && ".playerStatistic").select('.btn')
-                    .text('Statistic')
+                // d3.select(".dropdown" && ".playerStatistic").select('.btn')
+                //     .text('Statistic')
 
                 let followingYears = that.seasons.filter(function (d) {
                     return +startingyear <= +d && +d <= +startingyear + 2
@@ -204,12 +210,6 @@ class PlayerChart {
                 that.svg.selectAll('rect').remove()
                 that.svg.selectAll('.tick').remove()
 
-                d3.select(".dropdown" && ".playerCategory").select('.btn')
-                    .text('Category')
-
-                d3.select(".dropdown" && ".playerStatistic").select('.btn')
-                    .text('Statistic')
-
                 let endingYear = this.text
                 secondSeasonButton
                     .text(endingYear)
@@ -217,6 +217,8 @@ class PlayerChart {
                 that.currentRange = that.newRange.filter(function (d) {
                     return +endingYear >= +d
                 })
+
+                that.updateChartData(that.selection, that.category)
             })
     }
 
@@ -231,6 +233,14 @@ class PlayerChart {
 
 
         seasonDropdowns.select(".firstSeasonList")
+            .selectAll('dropdown-item')
+            .data(seasons)
+            .enter()
+            .append('a')
+            .text((d) => d)
+            .attr('class', 'dropdown-item')
+
+        seasonDropdowns.selectAll('.secondSeasonList')
             .selectAll('dropdown-item')
             .data(seasons)
             .enter()
@@ -255,26 +265,9 @@ class PlayerChart {
                 secondSeasonButton
                     .text('Season')
 
-                d3.select(".dropdown" && ".playerCategory").select('.btn')
-                    .text('Category')
-
-                d3.select(".dropdown" && ".playerStatistic").select('.btn')
-                    .text('Statistic')
-
                 that.firstYear = +firstYear
 
-                let items = seasonDropdowns.selectAll('.secondSeasonList')
-
-                items.selectAll('a').remove()
-
-                items.selectAll('dropdown-item')
-                    .data(that.seasons)
-                    .enter()
-                    .append('a')
-                    .text((d) => d)
-                    .attr('class', 'dropdown-item')
-
-                that.secondSeasonSpecificHandler()
+                that.updateChartData(that.selection, that.category)
             })        
     }
 
@@ -293,18 +286,13 @@ class PlayerChart {
                 that.svg.selectAll('rect').remove()
                 that.svg.selectAll('.tick').remove()
 
-                d3.select(".dropdown" && ".playerCategory").select('.btn')
-                    .text('Category')
-
-                d3.select(".dropdown" && ".playerStatistic").select('.btn')
-                    .text('Statistic')
-
                 let secondYear = this.text
 
                 secondSeasonButton
                     .text(secondYear)
 
                 that.secondYear = +secondYear
+                that.updateChartData(that.selection, that.category)
                 })         
     }
 
@@ -321,11 +309,12 @@ class PlayerChart {
             .on('click', function () {
 
                 that.svg.selectAll('rect').remove()
-
+                
                 document.getElementById("toggle").checked = false
                 categoryDropDown.select('.btn')
                     .text(this.text)
 
+                that.category = this.text
                 let stats = categories[this.text]
 
                 let items = statisticDropDown.select(".dropdown-menu")
@@ -354,6 +343,8 @@ class PlayerChart {
             .on('click', function () {
                 document.getElementById("toggle").checked = false
 
+                that.selection = this.text
+
                 statisticDropDown.select('.btn')
                     .text(this.text)
 
@@ -364,7 +355,6 @@ class PlayerChart {
     }
 
     updateChartData(selection, category) {
-        this.selection = selection
         selection = selection.replace(/\s/g, "")
         var that = this
 
@@ -394,8 +384,6 @@ class PlayerChart {
             }
         })
         
-        
-        console.log(newData)
         this.drawChart(newData)
     }
 

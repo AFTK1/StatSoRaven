@@ -25,13 +25,42 @@
 </head>
 
 <body>
-  <div class="banner p-5 rounded-3 mb-4">
+  <div class="banner p-5 rounded-3">
     <div class="container-fluid py-5">
       <h1 class="display-5 fw-bold">StatSoRaven</h1>
-      <p class="col-md-8 fs-4">A data visualization site for the Baltimore Ravens</p>
-      <!-- <button class="btn btn-primary btn-lg" type="button">Example button</button> -->
+      <p class="col-md-8 fs-4 mb-4">A data visualization site for the Baltimore Ravens</p>
     </div>
   </div>
+
+  <div class="containter center mb-4">
+      <button class="btn btn-primary collapsible" type="button" data-toggle="collapse" data-target="#about" aria-expanded="false" aria-controls="collapseExample">
+        About Us
+      </button>
+    <div class="collapse" id="about">
+        <div style="background-color: rgb(228, 228, 228); color: rgb(0, 0, 0) !important;">
+          <div class="container mb-4" style="padding-top:50px; padding-bottom: 50px; text-align: left;">
+            <p class="fs-4">This project is about creating a visualization for stats about the Baltimore Ravens as a team and
+              their
+              individual players. The main motivating reason for choosing this is simply because it is our favorite NFL
+              team. In the world of sports, it is common to discuss stats amongst other fans. We want to create a fun
+              project that we would be interested in that can display a visualization of these stats to help these kinds
+              of discussions</p>
+            </br>
+            <div class="col-md-6 fs-4">
+              <p>The main questions we want to answer are: </p>
+              <p style="padding-left:5%;">• How do the Ravens stats compare to their other years/seasons?</p>
+              <p style="padding-left:5%;">• How do individual players’ stats compare to themselves?</p>
+              <p style="padding-left:5%;">• Are players/the team improving/digressing throughout time?</p>
+              <p style="padding-left:5%;">• What areas are the strengths and weaknesses? </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+
+
   <!-- <div  class="mb-4" style="background-color:rgb(218, 185, 42);height:25px"></div> -->
 
   <div class="container mb-4">
@@ -85,92 +114,94 @@
   <div class="container mb-2">
     <h2 class="mb-4">Player Stats</h2>
     <div class="row">
-    <div class="col-md-10">
-      <div class="row mb-2">
-        <div class="col-4 themed-grid-col center">
-          Compare over a range:
-          <div class="dropdown season range mb-4">
-            <button class="range btn btn-secondary dropdown-toggle firstSeasonButton" type="button" id="dropdownMenuButton"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              2020
-            </button>
-            <div class="dropdown-menu menu-scroll range firstSeasonList" aria-labelledby="dropdownMenuButton">
+      <div class="col-md-10">
+        <div class="row mb-2">
+          <div class="col-4 themed-grid-col center">
+            Compare over a range:
+            <div class="dropdown season range mb-4">
+              <button class="range btn btn-secondary dropdown-toggle firstSeasonButton" type="button"
+                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                2020
+              </button>
+              <div class="dropdown-menu menu-scroll range firstSeasonList" aria-labelledby="dropdownMenuButton">
+              </div>
+              to
+              <button class="range btn btn-secondary dropdown-toggle secondSeasonButton" type="button"
+                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                2022
+              </button>
+              <div class="dropdown-menu range secondSeasonList" aria-labelledby="dropdownMenuButton">
+              </div>
             </div>
-            to
-            <button class="range btn btn-secondary dropdown-toggle secondSeasonButton" type="button" id="dropdownMenuButton"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              2022
-            </button>
-            <div class="dropdown-menu range secondSeasonList" aria-labelledby="dropdownMenuButton">
-            </div>
+            <div style="height:25px;"></div>
           </div>
-          <div style="height:25px;"></div>
-        </div>
-        <div class="col-1 themed-grid-col center" style="padding-top:10px ;">
-          <div class="row"><div class="col-12">OR</div></div> 
-          <div class="row">
+          <div class="col-1 themed-grid-col center" style="padding-top:10px ;">
+            <div class="row">
+              <div class="col-12">OR</div>
+            </div>
+            <div class="row">
               <label class="toggle-arrow">
                 <input type="checkbox" class="real-checkbox">
                 <div class="toggle-button"></div>
               </label>
-          </div> 
-        </div>
-        <div class="col-4 themed-grid-col center">
-          Compare two specific seasons:
-          <div class="dropdown season specific mb-4">
-            <button class="disabled specific btn btn-secondary dropdown-toggle firstSeasonButton" type="button" id="dropdownMenuButton"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              2004
-            </button>
-            <div class="dropdown-menu menu-scroll specific firstSeasonList" aria-labelledby="dropdownMenuButton">
-            </div>
-            and
-            <button class="disabled specific btn btn-secondary dropdown-toggle secondSeasonButton" type="button" id="dropdownMenuButton"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              2021
-            </button>
-            <div class="dropdown-menu menu-scroll specific secondSeasonList" aria-labelledby="dropdownMenuButton">
             </div>
           </div>
-          <div style="height:25px;"></div>
-        </div>
-        <div class="col-3 themed-grid-col center" >
-          <div class="dropdown playerCategory">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Passing
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item">Passing</a>
-              <a class="dropdown-item">Rushing</a>
-              <a class="dropdown-item">Receiving</a>
-              <a class="dropdown-item">Defense</a>
-              <a class="dropdown-item">Scoring</a>
+          <div class="col-4 themed-grid-col center">
+            Compare two specific seasons:
+            <div class="dropdown season specific mb-4">
+              <button class="disabled specific btn btn-secondary dropdown-toggle firstSeasonButton" type="button"
+                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                2004
+              </button>
+              <div class="dropdown-menu menu-scroll specific firstSeasonList" aria-labelledby="dropdownMenuButton">
+              </div>
+              and
+              <button class="disabled specific btn btn-secondary dropdown-toggle secondSeasonButton" type="button"
+                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                2021
+              </button>
+              <div class="dropdown-menu menu-scroll specific secondSeasonList" aria-labelledby="dropdownMenuButton">
+              </div>
             </div>
+            <div style="height:25px;"></div>
           </div>
-          <div class="dropdown playerStatistic">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Completions
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item">Completions</a>
-              <a class="dropdown-item">Yards</a>
-              <a class="dropdown-item">Yards Per Game</a>
-              <a class="dropdown-item">Longest Pass</a>
+          <div class="col-3 themed-grid-col center">
+            <div class="dropdown playerCategory">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Passing
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item">Passing</a>
+                <a class="dropdown-item">Rushing</a>
+                <a class="dropdown-item">Receiving</a>
+                <a class="dropdown-item">Defense</a>
+                <a class="dropdown-item">Scoring</a>
+              </div>
             </div>
+            <div class="dropdown playerStatistic">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Completions
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item">Completions</a>
+                <a class="dropdown-item">Yards</a>
+                <a class="dropdown-item">Yards Per Game</a>
+                <a class="dropdown-item">Longest Pass</a>
+              </div>
 
+            </div>
           </div>
-        </div>
 
+        </div>
+        <div class="row mb-2">
+          <div class="col-12 themed-grid-col"><svg id="playerChart"></svg></div>
+        </div>
       </div>
-      <div class="row mb-2">
-        <div class="col-12 themed-grid-col"><svg id="playerChart"></svg></div>
+      <div class="col-md-2" style="background-color: rgba(161, 22, 192, 0.144);">
+        <div class="col-12 center">Insert Player Table Here</div>
       </div>
-    </div>
-    <div class="col-md-2" style="background-color: rgba(161, 22, 192, 0.144);">
-      <div class="col-12 center" >Insert Player Table Here</div>
-    </div>
     </div>
   </div>
 

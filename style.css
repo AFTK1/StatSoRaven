@@ -146,3 +146,30 @@ input:checked+.slider:before {
   -webkit-transform: rotate(-45deg);
 
 }
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: rgba(161, 83, 224, 0.849) !important;
+  color: #444;
+  cursor: pointer;
+  width: 100%;
+  border: none !important;
+  text-align: left;
+  margin: auto;
+  outline: none;
+  font-size: 15px;
+  border-radius: 0 !important
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
