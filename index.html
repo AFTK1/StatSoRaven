@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>StatSoRaven</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+    integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
   <script src="https://d3js.org/d3.v7.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+    integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+    crossorigin="anonymous"></script>
   <script src="js/script.js"></script>
   <script src="js/playerChart.js"></script>
   <script src="js/playerTable.js"></script>
   <script src="js/teamChart.js"></script>
 </head>
+
 <body>
-<div class="banner p-5 rounded-3 mb-4">
+  <div class="banner p-5 rounded-3 mb-4">
     <div class="container-fluid py-5">
       <h1 class="display-5 fw-bold">StatSoRaven</h1>
       <p class="col-md-8 fs-4">A data visualization site for the Baltimore Ravens</p>
@@ -30,69 +37,108 @@
   <div class="container mb-4">
     <h2 class="mb-4">Team Stats</h2>
     <div class="row mb-2">
-        <div class="col-2 themed-grid-col center vertical-align-parent">
-            <div class="vertical-align-child">
-            <div class="dropdown teamCategory">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Category
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" >Scoring</a>
-                  <a class="dropdown-item" >1st Downs</a>
-                  <a class="dropdown-item" >Passing</a>
-                  <a class="dropdown-item" >Rushing</a>
-                  <a class="dropdown-item" >Offense</a>
-                  <a class="dropdown-item" >Returns</a>
-                  <a class="dropdown-item" >Kicking</a>
-                  <a class="dropdown-item" >Penalties</a>
-                </div>
-              </div>
-              <div class="dropdown teamStatistic">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Statistic
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                </div>
-              </div>
-              <div style="height:25px;"></div>
-              <div class="mb-2">Toggle Area</div>
-              <label class="switch" >
-                <input id="toggle" type="checkbox">
-                <span class="slider round"></span>
-            </label>
-            </div>
-        </div>
-        <div class="col-10 themed-grid-col center">
-            <svg id="teamChart"></svg>
-        </div>
-      </div>
-  </div>
-
-
-  
-  <div class="container mb-4">
-    <h2 class="mb-4">Player Stats</h2>
-  <div class="row mb-2">
-    <div class="col-3 themed-grid-col center vertical-align-parent">
+      <div class="col-2 themed-grid-col center vertical-align-parent">
         <div class="vertical-align-child">
-          Select a date range:
-          <div class="dropdown season">
-            <button class="btn btn-secondary dropdown-toggle firstSeasonButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Season
+          <div class="dropdown teamCategory">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              Scoring
             </button>
-            <div class="dropdown-menu menu-scroll firstSeasonList" aria-labelledby="dropdownMenuButton">
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item">Scoring</a>
+              <a class="dropdown-item">1st Downs</a>
+              <a class="dropdown-item">Passing</a>
+              <a class="dropdown-item">Rushing</a>
+              <a class="dropdown-item">Offense</a>
+              <a class="dropdown-item">Returns</a>
+              <a class="dropdown-item">Kicking</a>
+              <a class="dropdown-item">Penalties</a>
             </div>
-                            to
-            <button class="btn btn-secondary dropdown-toggle secondSeasonButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Season
+          </div>
+          <div class="dropdown teamStatistic">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              Total Points Per Game
             </button>
-            <div class="dropdown-menu menu-scroll secondSeasonList" aria-labelledby="dropdownMenuButton">
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item">Total Points Per Game</a>
+              <a class="dropdown-item">Total Points</a>
+              <a class="dropdown-item">Total Touchdowns</a>
             </div>
           </div>
           <div style="height:25px;"></div>
-        <div class="dropdown playerCategory">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Category
+          <div class="mb-2">Toggle Area</div>
+          <label class="switch">
+            <input id="toggle" type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+      <div class="col-10 themed-grid-col center">
+        <svg id="teamChart"></svg>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container mb-2">
+    <h2 class="mb-4">Player Stats</h2>
+    <div class="row">
+    <div class="col-md-10">
+      <div class="row mb-2">
+        <div class="col-4 themed-grid-col center">
+          Compare over a range:
+          <div class="dropdown season mb-4">
+            <button class="range btn btn-secondary dropdown-toggle firstSeasonButton" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              2020
+            </button>
+            <div class="dropdown-menu menu-scroll range firstSeasonList" aria-labelledby="dropdownMenuButton">
+            </div>
+            to
+            <button class="range btn btn-secondary dropdown-toggle secondSeasonButton" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              2022
+            </button>
+            <div class="dropdown-menu range secondSeasonList" aria-labelledby="dropdownMenuButton">
+            </div>
+          </div>
+          <div style="height:25px;"></div>
+        </div>
+        <div class="col-1 themed-grid-col center" style="padding-top:10px ;">
+          <div class="row"><div class="col-12">OR</div></div> 
+          <div class="row">
+              <label class="toggle-arrow">
+                <input type="checkbox" class="real-checkbox">
+                <div class="toggle-button"></div>
+              </label>
+          </div> 
+        </div>
+        <div class="col-4 themed-grid-col center">
+          Compare two specific seasons:
+          <div class="dropdown season mb-4">
+            <button class="disabled specific btn btn-secondary dropdown-toggle firstSeasonButton" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              2004
+            </button>
+            <div class="dropdown-menu menu-scroll specific firstSeasonList" aria-labelledby="dropdownMenuButton">
+            </div>
+            and
+            <button class="disabled specific btn btn-secondary dropdown-toggle secondSeasonButton" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              2021
+            </button>
+            <div class="dropdown-menu specific secondSeasonList" aria-labelledby="dropdownMenuButton">
+            </div>
+          </div>
+          <div style="height:25px;"></div>
+        </div>
+        <div class="col-3 themed-grid-col center" >
+          <div class="dropdown playerCategory">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Passing
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item">Passing</a>
@@ -103,28 +149,42 @@
             </div>
           </div>
           <div class="dropdown playerStatistic">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Statistic
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Completions
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item">Completions</a>
+              <a class="dropdown-item">Yards</a>
+              <a class="dropdown-item">Yards Per Game</a>
+              <a class="dropdown-item">Longest Pass</a>
             </div>
+
           </div>
+        </div>
+
+      </div>
+      <div class="row mb-2">
+        <div class="col-12 themed-grid-col"><svg id="playerChart"></svg></div>
+      </div>
     </div>
-</div>
-    <div class="col-7 themed-grid-col"><svg id="playerChart"></svg></div>
-    <div class="col-2 themed-grid-col">Insert Player Table Here</div>
+    <div class="col-md-2">
+      <div class="col-12 center">Insert Player Table Here</div>
+    </div>
+    </div>
   </div>
-</div>
+
 </body>
 
 <div>
-<nav class="navbar navbar-expand-sm navbar-dark">
+  <nav class="navbar navbar-expand-sm navbar-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="./ProcessBook.pdf" target="_blank">Process Book</a>
     </div>
     <div>
-        <a class="navbar-brand"> CS5630 project by Austin Kelley and Ben Malohi</a>
+      <a class="navbar-brand"> CS5630 project by Austin Kelley and Ben Malohi</a>
     </div>
   </nav>
 </div>
+
 </html>

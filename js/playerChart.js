@@ -4,13 +4,13 @@ class PlayerChart {
 
         this.chartData = [...data[0]]
         this.padding = {
-            left: 50,
+            left: 100,
             right: 30,
             top: 15,
             bottom: 130
         }
         this.chart = {
-            width: 750,
+            width: 1100,
             height: 600
         }
 
@@ -22,12 +22,14 @@ class PlayerChart {
             "Scoring": ["Rushing Touchdowns", "Receiving Touchdowns", "Return Touchdowns", "Total Touchdowns", "Total Points"]
         }
 
+        this.selection = "Completions"
+        this.isRangeSelected = true
         this.seasons = this.chartData.map(function (d) {
             return d.Year
         })
 
         this.newRange = []
-        this.currentRange = []
+        this.currentRange = [2020, 2021, 2022]
 
         this.svg = d3.selectAll("#playerChart")
             .attr("width", "100%")
@@ -43,9 +45,43 @@ class PlayerChart {
             //     2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022])
             .range([this.padding.left, this.chart.width - this.padding.right]).padding(0.2)
 
+        this.attatchHandlers()
+    }
+
+    attatchHandlers() {
+
         this.attachSeasonHandler()
         this.attachCategoryHandler()
+        this.attatchArrowHandler()
         this.drawAxis()
+        this.updateChartData("Completions", "Passing")
+        this.attachStatisticHandler("Passing")
+    }
+
+    attatchArrowHandler() {
+        d3.selectAll(".real-checkbox")
+            .on("click", function (d) {
+                let checked = this.checked
+
+                let specificDropdowns = d3.selectAll(".specific")
+                let rangeDropdowns = d3.selectAll(".range")
+                if (checked) {
+                    specificDropdowns
+                        .classed("disabled", false)
+
+                    rangeDropdowns
+                        .classed("disabled", true)
+                }
+                else {
+
+                    specificDropdowns
+                        .classed("disabled", true)
+
+                    rangeDropdowns
+                        .classed("disabled", false)
+                }
+
+            })
     }
 
     drawAxis() {
@@ -57,10 +93,13 @@ class PlayerChart {
 
         this.svg.selectAll('text,.tick').remove()
 
-        this.svg.append('text')
-            .attr("x", this.chart.width / 2)
-            .attr("y", this.chart.height - 5)
-            .text("Players")
+        this.svg.append("text")
+            .attr("text-anchor", "middle")
+            .attr("y", 25)
+            .attr("x", -250)
+            .attr("dy", ".75em")
+            .attr("transform", "rotate(-90)")
+            .text(this.selection)
 
         this.svg.append('g')
             .attr('transform', 'translate(' + this.padding.left + ',0)')
@@ -82,6 +121,7 @@ class PlayerChart {
     }
 
     attachSeasonHandler() {
+
         let seasonDropdowns = d3.select(".dropdown" && ".season")
         let firstSeasonButton = seasonDropdowns.select(".dropdown" && ".firstSeasonButton")
         let secondSeasonButton = seasonDropdowns.select(".dropdown" && ".secondSeasonButton")
@@ -120,7 +160,7 @@ class PlayerChart {
                     .text('Statistic')
 
                 let followingYears = that.seasons.filter(function (d) {
-                    return +startingyear <= +d
+                    return +startingyear <= +d && +d <= +startingyear + 2
                 })
 
                 that.newRange = followingYears
@@ -183,7 +223,7 @@ class PlayerChart {
         categoryDropDownItems
             .on('click', function () {
 
-                that.svg.selectAll('.chartPath').remove()
+                that.svg.selectAll('rect').remove()
 
                 document.getElementById("toggle").checked = false
                 categoryDropDown.select('.btn')
@@ -202,11 +242,12 @@ class PlayerChart {
                     .text((d) => d)
                     .attr('class', 'dropdown-item')
 
-                that.attachStatisticHandler(stats, this.text)
+                console.log(this.text)
+                that.attachStatisticHandler(this.text)
             })
     }
 
-    attachStatisticHandler(stats, category) {
+    attachStatisticHandler(category) {
         let statisticDropDown = d3.select(".dropdown" && ".playerStatistic")
         let statisticDropDownItems = statisticDropDown.selectAll('.dropdown-item')
 
@@ -226,6 +267,7 @@ class PlayerChart {
     }
 
     updateChartData(selection, category) {
+        this.selection = selection
         selection = selection.replace(/\s/g, "")
         var that = this
         var dataInRange = this.chartData.filter(function (d) {
@@ -250,7 +292,7 @@ class PlayerChart {
     }
 
     drawChart(data) {
-        var filteredData = data.filter(function(d){return d.y > 0})
+        var filteredData = data.filter(function (d) { return d.y > 0 })
         this.scaleX
             .domain(filteredData.map(function (d) {
                 return d.x
@@ -267,8 +309,7 @@ class PlayerChart {
             .remove().exit()
 
         let that = this
-        
-        console.log(filteredData)
+
         if (filteredData.length > 150) {
             this.svg.selectAll('rect')
                 .data(filteredData)
