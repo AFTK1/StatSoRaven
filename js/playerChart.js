@@ -30,6 +30,8 @@ class PlayerChart {
 
         this.newRange = []
         this.currentRange = [2020, 2021, 2022]
+        this.firstYear = 2004
+        this.secondYear = 2021
 
         this.svg = d3.selectAll("#playerChart")
             .attr("width", "100%")
@@ -51,6 +53,7 @@ class PlayerChart {
     attatchHandlers() {
 
         this.attachSeasonHandler()
+        this.attachSeasonSpecificHandler()
         this.attachCategoryHandler()
         this.attatchArrowHandler()
         this.drawAxis()
@@ -59,6 +62,7 @@ class PlayerChart {
     }
 
     attatchArrowHandler() {
+        let that = this
         d3.selectAll(".real-checkbox")
             .on("click", function (d) {
                 let checked = this.checked
@@ -71,6 +75,8 @@ class PlayerChart {
 
                     rangeDropdowns
                         .classed("disabled", true)
+
+                    that.isRangeSelected = false
                 }
                 else {
 
@@ -79,6 +85,8 @@ class PlayerChart {
 
                     rangeDropdowns
                         .classed("disabled", false)
+
+                        that.isRangeSelected = true
                 }
 
             })
@@ -122,7 +130,8 @@ class PlayerChart {
 
     attachSeasonHandler() {
 
-        let seasonDropdowns = d3.select(".dropdown" && ".season")
+        //range dropdowns
+        let seasonDropdowns = d3.select(".dropdown" && ".season" && ".range")
         let firstSeasonButton = seasonDropdowns.select(".dropdown" && ".firstSeasonButton")
         let secondSeasonButton = seasonDropdowns.select(".dropdown" && ".secondSeasonButton")
 
@@ -177,14 +186,13 @@ class PlayerChart {
                     .attr('class', 'dropdown-item')
 
                 that.secondSeasonHandler()
-            })
-
-
-
+            })        
     }
 
     secondSeasonHandler() {
-        let seasonDropdowns = d3.select(".dropdown" && ".season")
+
+        //range dropdowns
+        let seasonDropdowns = d3.select(".dropdown" && ".season" && ".range")
         let secondSeasonButton = seasonDropdowns.select(".dropdown" && ".secondSeasonButton")
         let secondSeasonList = seasonDropdowns.selectAll(".secondSeasonList").selectAll('.dropdown-item')
 
@@ -211,6 +219,95 @@ class PlayerChart {
                 })
             })
     }
+
+    attachSeasonSpecificHandler() {
+
+        //range dropdowns
+        let seasonDropdowns = d3.select(".dropdown" && ".season"  && ".specific")
+        let firstSeasonButton = seasonDropdowns.select(".dropdown" && ".firstSeasonButton")
+        let secondSeasonButton = seasonDropdowns.select(".dropdown" && ".secondSeasonButton")
+
+        let seasons = this.seasons
+
+
+        seasonDropdowns.select(".firstSeasonList")
+            .selectAll('dropdown-item')
+            .data(seasons)
+            .enter()
+            .append('a')
+            .text((d) => d)
+            .attr('class', 'dropdown-item')
+
+        let firstSeasonList = seasonDropdowns.selectAll(".firstSeasonList").selectAll('.dropdown-item')
+
+        let that = this
+        firstSeasonList
+            .on('click', function () {
+
+                //that.svg.selectAll('.chartPath').remove()
+                var firstYear = this.text
+
+                firstSeasonButton
+                    .text(firstYear)
+
+                that.svg.selectAll('rect').remove()
+
+                secondSeasonButton
+                    .text('Season')
+
+                d3.select(".dropdown" && ".playerCategory").select('.btn')
+                    .text('Category')
+
+                d3.select(".dropdown" && ".playerStatistic").select('.btn')
+                    .text('Statistic')
+
+                that.firstYear = +firstYear
+
+                let items = seasonDropdowns.selectAll('.secondSeasonList')
+
+                items.selectAll('a').remove()
+
+                items.selectAll('dropdown-item')
+                    .data(that.seasons)
+                    .enter()
+                    .append('a')
+                    .text((d) => d)
+                    .attr('class', 'dropdown-item')
+
+                that.secondSeasonSpecificHandler()
+            })        
+    }
+
+    secondSeasonSpecificHandler() {
+
+        //range dropdowns
+        let seasonDropdowns = d3.select(".dropdown" && ".season" && ".specific")
+        let secondSeasonButton = seasonDropdowns.select(".dropdown" && ".secondSeasonButton")
+        let secondSeasonList = seasonDropdowns.selectAll(".secondSeasonList").selectAll('.dropdown-item')
+
+        let that = this
+        secondSeasonList
+            .on('click', function () {
+                //that.svg.selectAll('.chartPath').remove()
+
+                that.svg.selectAll('rect').remove()
+                that.svg.selectAll('.tick').remove()
+
+                d3.select(".dropdown" && ".playerCategory").select('.btn')
+                    .text('Category')
+
+                d3.select(".dropdown" && ".playerStatistic").select('.btn')
+                    .text('Statistic')
+
+                let secondYear = this.text
+
+                secondSeasonButton
+                    .text(secondYear)
+
+                that.secondYear = +secondYear
+                })         
+    }
+
 
     attachCategoryHandler() {
         let categoryDropDown = d3.select(".dropdown" && ".playerCategory")
@@ -270,12 +367,21 @@ class PlayerChart {
         this.selection = selection
         selection = selection.replace(/\s/g, "")
         var that = this
-        var dataInRange = this.chartData.filter(function (d) {
-            return that.currentRange.includes(d.Year)
-        })
+
+        var selectedSeasonData = []
+        if(this.isRangeSelected){
+            selectedSeasonData = this.chartData.filter(function (d) {
+                return that.currentRange.includes(d.Year)
+            })
+        }
+        else{
+            selectedSeasonData = this.chartData.filter(function (d) {
+                return d.Year == that.firstYear || d.Year == that.secondYear
+            })
+        }
 
         var selectedData = []
-        dataInRange.forEach(season => {
+        selectedSeasonData.forEach(season => {
             selectedData = [...selectedData, ...season[category]]
         });
 
@@ -287,7 +393,9 @@ class PlayerChart {
                 y: d[selection]
             }
         })
-
+        
+        
+        console.log(newData)
         this.drawChart(newData)
     }
 
