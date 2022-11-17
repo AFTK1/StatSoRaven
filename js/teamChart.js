@@ -197,6 +197,7 @@ class TeamChart {
             }
         })
 
+        
         this.drawChart(ravensData, opponentsData)
     }
 

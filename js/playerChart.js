@@ -192,7 +192,7 @@ class PlayerChart {
                     .attr('class', 'dropdown-item')
 
                 that.secondSeasonHandler()
-            })        
+            })
     }
 
     secondSeasonHandler() {
@@ -225,7 +225,7 @@ class PlayerChart {
     attachSeasonSpecificHandler() {
 
         //range dropdowns
-        let seasonDropdowns = d3.select(".dropdown" && ".season"  && ".specific")
+        let seasonDropdowns = d3.select(".dropdown" && ".season" && ".specific")
         let firstSeasonButton = seasonDropdowns.select(".dropdown" && ".firstSeasonButton")
         let secondSeasonButton = seasonDropdowns.select(".dropdown" && ".secondSeasonButton")
 
@@ -265,7 +265,7 @@ class PlayerChart {
                 that.firstYear = +firstYear
 
                 that.updateChartData(that.selection, that.category)
-            })        
+            })
     }
 
     secondSeasonSpecificHandler() {
@@ -290,7 +290,7 @@ class PlayerChart {
 
                 that.secondYear = +secondYear
                 that.updateChartData(that.selection, that.category)
-                })         
+            })
     }
 
 
@@ -306,7 +306,7 @@ class PlayerChart {
             .on('click', function () {
 
                 that.svg.selectAll('rect').remove()
-                
+
                 document.getElementById("toggle").checked = false
                 categoryDropDown.select('.btn')
                     .text(this.text)
@@ -356,12 +356,12 @@ class PlayerChart {
         var that = this
 
         var selectedSeasonData = []
-        if(this.isRangeSelected){
+        if (this.isRangeSelected) {
             selectedSeasonData = this.chartData.filter(function (d) {
                 return that.currentRange.includes(d.Year)
             })
         }
-        else{
+        else {
             selectedSeasonData = this.chartData.filter(function (d) {
                 return d.Year == that.firstYear || d.Year == that.secondYear
             })
@@ -380,11 +380,22 @@ class PlayerChart {
                 y: d[selection]
             }
         })
-        
-        this.drawChart(newData)
+
+        this.drawChart(newData.sort(compare))
+
+        function compare(a, b) {
+            if (a.x < b.x) {
+                return -1
+            }
+            if (a.x > b.x) {
+                return 1
+            }
+            return 0
+        }
     }
 
     drawChart(data) {
+
         var filteredData = data.filter(function (d) { return d.y > 0 })
         this.scaleX
             .domain(filteredData.map(function (d) {
@@ -403,35 +414,35 @@ class PlayerChart {
 
         let that = this
 
-        if (filteredData.length > 150) {
-            this.svg.selectAll('rect')
-                .data(filteredData)
-                .enter()
-                .append('rect')
-                .attr('fill', 'rgb(141, 60, 207)')
-                .attr('x', function (d) { return that.scaleX(d.x) })
-                .attr('y', function (d) { return +d.y < 0 ? 0 : that.scaleY(d.y) })
-                .attr('width', that.scaleX.bandwidth())
-                .attr('height', function (d) { return +d.y < 0 ? 0 : ((that.chart.height - that.padding.bottom) - (that.scaleY(d.y))) })
-        }
-        else {
-            this.svg.selectAll('rect')
-                .data(filteredData)
-                .enter()
-                .append('rect')
-                .attr('fill', 'rgb(141, 60, 207)')
-                .attr('x', function (d) { return that.scaleX(d.x) })
-                .attr('y', function (d) { return that.scaleY(0) })
-                .attr('width', that.scaleX.bandwidth())
-                .attr('height', function (d) { return +d.y < 0 ? 0 : ((that.chart.height - that.padding.bottom) - (that.scaleY(0))) })
+        this.svg.selectAll('rect')
+            .data(filteredData)
+            .enter()
+            .append('rect')
+            .attr('fill', 'rgb(141, 60, 207)')
+            .attr('x', function (d) { return that.scaleX(d.x) })
+            .attr('y', function (d) { return that.scaleY(0) })
+            .attr('width', that.scaleX.bandwidth())
+            .attr('height', function (d) { return +d.y < 0 ? 0 : ((that.chart.height - that.padding.bottom) - (that.scaleY(0))) })
+            .attr("class", (d) => d.x.trim().split(" ")[0])
+            .on("mouseover", function(d) {
+                that.svg.selectAll("rect." + d["target"].className.baseVal)
+                    .attr("fill-opacity", .5)
+                    .attr("stroke", "rgb(141, 60, 207)")
+                    .attr("stroke-width", "1")
+            })
+            .on("mouseout", function(d) {
+                that.svg.selectAll("rect." + d["target"].className.baseVal)
+                    .attr("fill-opacity", 1)
+                    .attr("stroke", "none")
+            })
 
-            this.svg.selectAll("rect")
-                .transition()
-                .duration(500)
-                .attr("y", function (d) { return +d.y < 0 ? 0 : that.scaleY(d.y) })
-                .attr("height", function (d) { return +d.y < 0 ? 0 : ((that.chart.height - that.padding.bottom) - (that.scaleY(d.y))) })
-                .delay(function (d, i) { return (i * 25) })
-        }
+        this.svg.selectAll("rect")
+            .transition()
+            .duration(500)
+            .attr("y", function (d) { return +d.y < 0 ? 0 : that.scaleY(d.y) })
+            .attr("height", function (d) { return +d.y < 0 ? 0 : ((that.chart.height - that.padding.bottom) - (that.scaleY(d.y))) })
+            .delay(function (d, i) { return (i * 25) })
+
 
     }
 }
