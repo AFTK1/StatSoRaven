@@ -1,8 +1,7 @@
 
 class PlayerChart {
-    constructor(data) {
-
-        this.chartData = [...data[0]]
+    constructor() {
+        this.chartData = [...globalApplicationState.allData[0]]
         this.padding = {
             left: 100,
             right: 30,
@@ -372,6 +371,8 @@ class PlayerChart {
             selectedData = [...selectedData, ...season[category]]
         });
 
+        globalApplicationState.tableState.updateTableData(selectedData, selection)
+
         var newData = selectedData.map(function (d) {
             var stringArr = d.Name.split(" ")
             var dx = stringArr[1] + " " + stringArr[stringArr.length - 1]
@@ -395,7 +396,6 @@ class PlayerChart {
     }
 
     drawChart(data) {
-
         var filteredData = data.filter(function (d) { return d.y > 0 })
         this.scaleX
             .domain(filteredData.map(function (d) {
