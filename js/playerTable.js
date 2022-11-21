@@ -54,12 +54,30 @@ class PlayerTable {
                 }
             })
             .on("mouseover", function (d) {
-                    d3.select('#playerChart').selectAll("rect." + this.__data__.lName)
-                        .attr("fill", "#000000")
+                d3.select('#playerChart').selectAll("rect." + this.__data__.lName)
+                .attr("fill", "#000000")
+                
+                if(this.__data__.selection == that.statSelection){
+                    d3.select(this).style("background", "rgb(187, 187, 187)")
+                }
+
             })
             .on("mouseout", function (d) {
-                    d3.select('#playerChart').selectAll("rect." + this.__data__.lName)
-                        .attr("fill", "rgb(141, 60, 207)")
+
+                d3.select('#playerChart').selectAll("rect." + this.__data__.lName)
+                .attr("fill", "rgb(141, 60, 207)")
+
+                if(this.__data__.selection == that.statSelection){
+                    if(this.__data__.hidden == false){
+                        d3.select(this).style("background", "rgba(161, 83, 224, 0.25)")
+                    }
+                    else{
+                        d3.select(this).style("background", "none")
+                    }
+                }
+
+
+
             })
 
     }
