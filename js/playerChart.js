@@ -3,14 +3,14 @@ class PlayerChart {
     constructor() {
         this.chartData = [...globalApplicationState.allData[0]]
         this.padding = {
-            left: 100,
+            left: 50,
             right: 30,
             top: 15,
             bottom: 130
         }
         this.chart = {
-            width: 1100,
-            height: 600
+            width: 1310,
+            height: 350
         }
 
         this.categories = {
@@ -93,7 +93,6 @@ class PlayerChart {
 
                     that.updateChartData(that.selection, that.category)
                 }
-
             })
     }
 
@@ -108,8 +107,8 @@ class PlayerChart {
 
         this.svg.append("text")
             .attr("text-anchor", "middle")
-            .attr("y", 25)
-            .attr("x", -250)
+            .attr("y", 0)
+            .attr("x", -150)
             .attr("dy", ".75em")
             .attr("transform", "rotate(-90)")
             .text(this.selection)
@@ -426,14 +425,11 @@ class PlayerChart {
             .attr("class", (d) => d.x.trim().split(" ")[0])
             .on("mouseover", function(d) {
                 that.svg.selectAll("rect." + d["target"].className.baseVal)
-                    .attr("fill-opacity", .5)
-                    .attr("stroke", "rgb(141, 60, 207)")
-                    .attr("stroke-width", "1")
+                    .attr("fill", "#000000")
             })
             .on("mouseout", function(d) {
                 that.svg.selectAll("rect." + d["target"].className.baseVal)
-                    .attr("fill-opacity", 1)
-                    .attr("stroke", "none")
+                    .attr("fill", "rgb(141, 60, 207)")
             })
 
         this.svg.selectAll("rect")

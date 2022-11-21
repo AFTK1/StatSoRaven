@@ -1,5 +1,5 @@
-class PlayerTable{
-    constructor(){
+class PlayerTable {
+    constructor() {
 
         this.tableData = []
 
@@ -14,7 +14,7 @@ class PlayerTable{
 
     }
 
-    drawTable(){
+    drawTable() {
         let rowSelection = d3.select('#playerTableBody')
             .selectAll('tr')
             .data(this.tableData)
@@ -23,6 +23,10 @@ class PlayerTable{
         rowSelection.selectAll('td')
             .remove()
 
+        rowSelection.on('click', (event, d) => {
+            this.toggleRow(d, this.tableData.indexOf(d));
+        });
+
         let tableDataSelection = rowSelection.selectAll('td')
             .data(this.rowToCellDataTransform)
             .join('td')
@@ -30,28 +34,49 @@ class PlayerTable{
         tableDataSelection.selectAll("tr")
             .data(d => [d])
             .join("text")
-            .text(d => d.name)
-            .on("mouseover", function(d) {
-                d3.select('#playerChart').selectAll("rect." + d["target"]["__data__"].name.split(" ")[0])
-                    .attr("fill-opacity", .5)
-                    .attr("stroke", "rgb(141, 60, 207)")
-                    .attr("stroke-width", "1")
+            .text(d => d.value)
+            .attr('class', function (d) {
+                if (d.hidden == true) {
+                    return "hide"
+                }
             })
-            .on("mouseout", function(d) {
-                d3.select('#playerChart').selectAll("rect." + d["target"]["__data__"].name.split(" ")[0])
-                    .attr("fill-opacity", 1)
-                    .attr("stroke", "none")
+
+
+        let that = this
+        rowSelection
+            .style("background", function(d) {
+                if(d.selection != that.statSelection){
+                    return "rgba(255, 222, 115, 0.5)"
+                }
+
+                if(d.hidden == false){
+                    return "rgba(161, 83, 224, 0.25)"
+                }
             })
+            .on("mouseover", function (d) {
+                    d3.select('#playerChart').selectAll("rect." + this.__data__.lName)
+                        .attr("fill", "#000000")
+            })
+            .on("mouseout", function (d) {
+                    d3.select('#playerChart').selectAll("rect." + this.__data__.lName)
+                        .attr("fill", "rgb(141, 60, 207)")
+            })
+
     }
 
-    rowToCellDataTransform(d){
-        return [{name: d.lName + " , " + d.fName}]
+    rowToCellDataTransform(d) {
+        var selection = d.selection
+        let player = { type: "player", value: d.lName + " , " + d.fName, hidden: d.hidden, }
+        let stat = { type: "stat", value: selection + " in " + d.stats[0].year }
+        let value = { type: "value", value: d.stats[0][selection] }
+        return [player, stat, value]
     }
 
-    updateTableData(newData, statSelection){
+    updateTableData(newData, statSelection) {
+        this.statSelection = statSelection
         var arr = []
-        for (const player of newData){
-            if(player[statSelection] == 0){
+        for (const player of newData) {
+            if (player[statSelection] == 0) {
                 continue
             }
 
@@ -60,28 +85,31 @@ class PlayerTable{
             var fName = stringArr[0]
             var lName = stringArr[1]
             var year = +stringArr[stringArr.length - 1]
-            var newStat = {year:year}
-            var stats = []
+            var newStat = { year: year }
+            var stat = []
+            var hidden = false
 
-            for(var i = 1; i < keys.length; i++){
+            for (var i = 1; i < keys.length; i++) {
                 newStat[keys[i]] = player[keys[i]]
             }
 
             const idx = arr.findIndex(d => d.lName === lName)
-            if(idx > -1){
-                arr[idx].stats.push(newStat)
+            if (idx > -1) {
+                hidden = true
             }
-            else{
-                stats.push(newStat)
 
-                var newPlayer = {
-                    fName: fName,
-                    lName: lName,
-                    stats: stats
-                }
-    
-                arr.push(newPlayer)
+            stat.push(newStat)
+
+            var newPlayer = {
+                fName: fName,
+                lName: lName,
+                hidden: hidden,
+                selection: statSelection,
+                isExpanded: false,
+                stats: stat
             }
+
+            arr.push(newPlayer)
         }
 
         arr.sort(compare)
@@ -98,14 +126,13 @@ class PlayerTable{
 
         this.tableData = arr
         this.drawTable()
-        console.log(this.tableData)
     }
 
-    attachSortHandler(){
+    attachSortHandler() {
         d3.selectAll("table").select("th")
             .on('click', (d) => {
-                
-                if(this.headerData.ascending){                        
+
+                if (this.headerData.ascending) {
                     this.tableData.sort((a, b) => a.state < b.state ? 1 : -1)
                 }
                 else {
@@ -114,5 +141,36 @@ class PlayerTable{
 
                 //this.drawTable()
             })
+    }
+
+    toggleRow(rowData, index) {
+        //console.log("after click")
+        if(rowData.isNewRow == undefined){
+            if (rowData.isExpanded) {
+                this.tableData.splice(index + 1, Object.keys(rowData.stats[0]).length-2)
+                rowData.isExpanded = false
+            }
+            else {
+                for (const stat of Object.keys(rowData.stats[0])) {
+                    if (stat != rowData.selection && stat != "year") {
+    
+                        var newRow = {
+                            fName: rowData.fName,
+                            lName: rowData.fName,
+                            hidden: true,
+                            selection: stat,
+                            isExpanded: false,
+                            stats: rowData.stats,
+                            isNewRow: true
+                        }
+                        this.tableData.splice(++index, 0, newRow)                  
+                    }
+                }
+                rowData.isExpanded = true
+            }
+            this.drawTable()
+        }
+
+
     }
 }

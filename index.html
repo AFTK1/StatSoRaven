@@ -114,7 +114,7 @@
   <div class="container mb-2">
     <h2 class="mb-4" id="psHeader">Player Stats</h2>
     <div class="row">
-      <div class="col-md-10">
+      <div class="col-md-12">
         <div class="row mb-2">
           <div class="col-4 themed-grid-col center">
             Compare over a range:
@@ -199,17 +199,21 @@
           <div class="col-12 themed-grid-col"><svg id="playerChart"></svg></div>
         </div>
       </div>
-      <div class="col-md-2" >
-        <div class="col-md-12 center">
+    </div>
+    <div class="row">
+      <div class="col-md-12 tableScroll" >
           <table id="playerTable" >
             <thead>
-              <th class="sortable">Players A-Z</i></th>
+              <tr id="columnHeaders">
+                <th class="sortable">Player <i class="fas no-display"></i></th>
+                <th class="sortable">Stat<i class="fas no-display"></i></th>
+                <th class="sortable">Value<i class="fas fa-sort-down"></i></th>
+            </tr>
             </thead>
             <tbody id="playerTableBody">
 
             </tbody>
           </table>
-        </div>
       </div>
     </div>
   </div>
