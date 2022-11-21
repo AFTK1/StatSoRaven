@@ -96,7 +96,7 @@ class PlayerTable {
         this.statSelection = statSelection
         var arr = []
         for (const player of newData) {
-            if (player[statSelection] < 0) {
+            if (player[statSelection] <= 0) {
                 continue
             }
 
