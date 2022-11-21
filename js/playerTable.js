@@ -34,10 +34,12 @@ class PlayerTable {
         tableDataSelection.selectAll("tr")
             .data(d => [d])
             .join("text")
-            .text(d => d.value)
-            .attr('class', function (d) {
+            .text(function (d) {
                 if (d.hidden == true) {
-                    return "hide"
+                    return "\" \""
+                }
+                else{
+                    return d.value
                 }
             })
 
