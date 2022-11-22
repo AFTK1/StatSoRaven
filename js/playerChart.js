@@ -458,7 +458,7 @@ class PlayerChart {
                 that.svg.selectAll("rect." + d["target"].className.baseVal)
                     .attr("fill", "#000000")
 
-                tooltip.style("top", (d.pageY) + "px").style("left", (d.pageX) + "px")
+                tooltip.style("top", (d.pageY + 50) + "px").style("left", (d.pageX + 50) + "px")
             })
             .on("mouseleave", function () {tooltip.style("visibility", "hidden");})
 
