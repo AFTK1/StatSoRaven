@@ -323,7 +323,6 @@ class PlayerChart {
                     .text((d) => d)
                     .attr('class', 'dropdown-item')
 
-                console.log(this.text)
                 that.attachStatisticHandler(this.text)
             })
     }
@@ -413,6 +412,21 @@ class PlayerChart {
 
         let that = this
 
+
+        var tableData = globalApplicationState.tableState.getTableData()
+
+        var tooltip = d3.select("body")
+        .append("div")
+        .style("position", "absolute")
+        .style("visibility", "hidden")
+        .style('background-color', 'white')
+        .style("border", "solid")
+        .style("border-color", "#9454dd")
+        .style("border-width", "3px")
+        .style("border-radius", "5px")
+        .style('padding', '10px')
+        .style('text-align', 'center')
+
         this.svg.selectAll('rect')
             .data(filteredData)
             .enter()
@@ -423,14 +437,30 @@ class PlayerChart {
             .attr('width', that.scaleX.bandwidth())
             .attr('height', function (d) { return +d.y < 0 ? 0 : ((that.chart.height - that.padding.bottom) - (that.scaleY(0))) })
             .attr("class", (d) => d.x.trim().split(" ")[0])
-            .on("mouseover", function(d) {
+            .on("mouseover", function (d, data) {
                 that.svg.selectAll("rect." + d["target"].className.baseVal)
                     .attr("fill", "#000000")
+
+                    let idx = tableData.findIndex(d => d.lName === data.x.split(" ")[0])
+                    let fullName = tableData[idx].fName + " " +  tableData[idx].lName
+                    
+                    tooltip
+                    .style("visibility", "visible")
+                    .html('<p>' + fullName + '</p><p>' + that.selection + ": " + data.y.toLocaleString("en-US") + '</p>')
+                    // .style("top", (d.pageY) + "px")
+                    // .style("left", (d.pageX) + "px")
             })
-            .on("mouseout", function(d) {
+            .on("mouseout", function (d) {
                 that.svg.selectAll("rect." + d["target"].className.baseVal)
                     .attr("fill", "rgb(141, 60, 207)")
             })
+            .on("mousemove", function (d) {
+                that.svg.selectAll("rect." + d["target"].className.baseVal)
+                    .attr("fill", "#000000")
+
+                tooltip.style("top", (d.pageY) + "px").style("left", (d.pageX) + "px")
+            })
+            .on("mouseleave", function () {tooltip.style("visibility", "hidden");})
 
         this.svg.selectAll("rect")
             .transition()

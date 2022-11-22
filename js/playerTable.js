@@ -15,6 +15,7 @@ class PlayerTable {
     }
 
     drawTable() {
+
         let rowSelection = d3.select('#playerTableBody')
             .selectAll('tr')
             .data(this.tableData)
@@ -81,7 +82,10 @@ class PlayerTable {
 
 
             })
+    }
 
+    getTableData(){
+        return this.tableData
     }
 
     rowToCellDataTransform(d) {
