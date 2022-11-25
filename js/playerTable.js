@@ -21,7 +21,6 @@ class PlayerTable {
     }
 
     drawTable() {
-        console.log(this.tableData)
         let rowSelection = d3.select('#playerTableBody')
             .selectAll('tr')
             .data(this.tableData)
