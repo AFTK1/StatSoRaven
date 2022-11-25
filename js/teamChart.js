@@ -1,7 +1,7 @@
 class TeamChart {
-    constructor(data) {
+    constructor(globalApplicationState) {
 
-        this.chartData = [...data[0]]
+        this.chartData = [...globalApplicationState.teamData[0]]
 
         this.padding = {
             left: 100,
@@ -12,7 +12,9 @@ class TeamChart {
         this.chart = {
             width: 850,
             height: 600
-        }    
+        }
+
+
 
         this.svg = d3.selectAll("#teamChart")
             .attr("width", "100%")
@@ -41,7 +43,7 @@ class TeamChart {
         this.attachCategoryHandler()
         this.drawAxis()
 
-        
+
         this.updateChartData("Total Points Per Game", "Scoring")
         this.attachStatisticHandler("Scoring")
     }
@@ -153,10 +155,10 @@ class TeamChart {
         let statisticDropDownItems = statisticDropDown.selectAll('.dropdown-item')
 
         let that = this
-        
+
         statisticDropDownItems
             .on('click', function () {
-                document.getElementById("toggle").checked = false            
+                document.getElementById("toggle").checked = false
                 d3.select(".dropdown" && ".teamStatistic").select('.btn').text(this.text)
                 that.updateChartData(this.text, category)
             })
@@ -197,9 +199,11 @@ class TeamChart {
             }
         })
 
-        
+
         this.drawChart(ravensData, opponentsData)
     }
+
+
 
     drawChart(ravensData, opponentsData) {
         var allData = ravensData.concat(opponentsData)
@@ -216,7 +220,7 @@ class TeamChart {
             .attr("stroke", "#8D3CCF")
             .attr("stroke-width", 3)
             .attr("d", d3.line()
-                .x((d) => { return this.scaleX(d.x) + 45})
+                .x((d) => { return this.scaleX(d.x) + 45 })
                 .y((d) => { return this.scaleY(d.y) })
             )
             .attr('class', 'chartPath')
@@ -253,7 +257,7 @@ class TeamChart {
             .duration(1500)
 
 
-        
+
         var ravensArea = this.svg.append('path')
             .datum(ravensData)
             .attr("fill", "none")

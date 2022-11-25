@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;900&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/aa55184122.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
     integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
   <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -18,47 +19,56 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
     integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
     crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+  
   <script src="js/script.js"></script>
   <script src="js/playerChart.js"></script>
   <script src="js/playerTable.js"></script>
   <script src="js/teamChart.js"></script>
+  <script src="js/teamRadarChart.js"></script>
 </head>
 
 <body>
+  
   <div class="banner rounded-3">
     <div class="container-fluid center">
-      <div class = "row"></div>
+      <div class="row"></div>
       <img src="/ravens-logo.png" width="300px">
       <h1 class="display-5 fw-bold">StatSoRaven</h1>
-      <p class="fs-4 mb-4">A data visualization site for the Baltimore Ravens</p>
+      <p class="fs-4 mb-4">A data visualization site for the Baltimore Ravens </p>
     </div>
   </div>
 
   <div class="containter center mb-4">
-      <button class="btn btn-primary collapsible" type="button" data-toggle="collapse" data-target="#about" aria-expanded="false" aria-controls="collapseExample">
-        About Us
-      </button>
+    <button class="btn btn-primary collapsible" type="button" data-toggle="collapse" data-target="#about"
+      aria-expanded="false" aria-controls="collapseExample">
+      About Us
+    </button>
     <div class="collapse" id="about">
-        <div style="background-color: rgb(228, 228, 228); color: rgb(0, 0, 0) !important;">
-          <div class="container mb-4" style="padding-top:50px; padding-bottom: 50px; text-align: left;">
-            <p class="fs-4">
-              This project is about creating data visualizations for the Baltimore Ravens team as well as their
-              individual players. The main motivating reason for choosing this is simply because it is our favorite NFL
-              team. In the world of sports, it is common to discuss stats amongst each other so we wanted to create 
-              visualizations that would help facilitate this kind of discussion as well as show how the Baltimore Ravens have improved, or not,
-              over time.</p>
-            </br>
-            <div class="col-md-6 fs-4">
-              <p>The main questions we want to answer with this project are: </p>
-              <p style="padding-left:5%;">• <a href="#tsHeader">Have the Ravens improved/digressed throughout time?</a></p>
-              <p style="padding-left:5%;">• <a href="#Header">Do the Ravens have specific strengths or weaknesses?</a></p>
-              <p style="padding-left:5%;">• <a href="#psHeader">How do individual players’ stats compare to themselves?</a></p>
-              <p style="padding-left:5%;">• <a href="#psHeader">Have the players themselves improved/digressed throughout time?</a></p>
+      <div style="background-color: rgb(228, 228, 228); color: rgb(0, 0, 0) !important;">
+        <div class="container mb-4" style="padding-top:50px; padding-bottom: 50px; text-align: left;">
+          <p class="fs-4">
+            This project is about creating data visualizations for the Baltimore Ravens team as well as their
+            individual players. The main motivating reason for choosing this is simply because it is our favorite NFL
+            team. In the world of sports, it is common to discuss stats amongst each other so we wanted to create
+            visualizations that would help facilitate this kind of discussion as well as show how the Baltimore Ravens
+            have improved, or not,
+            over time.</p>
+          </br>
+          <div class="col-md-6 fs-4">
+            <p>The main questions we want to answer with this project are: </p>
+            <p style="padding-left:5%;">• <a href="#tsHeader">Have the Ravens improved/digressed throughout time?</a>
+            </p>
+            <p style="padding-left:5%;">• <a href="#Header">Do the Ravens have specific strengths or weaknesses?</a></p>
+            <p style="padding-left:5%;">• <a href="#psHeader">How do individual players’ stats compare to
+                themselves?</a></p>
+            <p style="padding-left:5%;">• <a href="#psHeader">Have the players themselves improved/digressed throughout
+                time?</a></p>
           </div>
         </div>
       </div>
     </div>
-  
+
   </div>
 
 
@@ -66,7 +76,7 @@
   <!-- <div  class="mb-4" style="background-color:rgb(218, 185, 42);height:25px"></div> -->
 
   <div class="container mb-4">
-    <h2 class="mb-4" id="tsHeader">Team Stats</h2>
+    <h2 class="mb-4" id="tsHeader">Team Stats <i class="fas fa-solid fa-arrow-up"></i></h2>
     <div class="row mb-2">
       <div class="col-2 themed-grid-col center vertical-align-parent">
         <div class="vertical-align-child">
@@ -109,12 +119,22 @@
         <svg id="teamChart"></svg>
       </div>
     </div>
+    <div class="row mb-2">
+      <div class="col-12 center">
+        <div class="row">
+          <div class="col-6 center radar" id="radarLeft"></div>
+          <div class="col-6 center radar" id="radarRight"></div>
+        </div>
+        <!-- <img src="https://quickchart.io/chart/render/zm-b611f89c-7c73-425c-b85f-b48b3b0ac328?data1=50,40,30,20"> -->
+        <!-- <svg id="teamRadarChart"></svg> -->
+      </div>
+    </div>
   </div>
 
 
 
   <div class="container mb-2">
-    <h2 class="mb-4" id="psHeader">Player Stats</h2>
+    <h2 class="mb-4" id="psHeader">Player Stats </h2>
     <div class="row">
       <div class="col-md-12">
         <div class="row mb-2">
@@ -203,19 +223,19 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-12 tableScroll" >
-          <table id="playerTable" >
-            <thead>
-              <tr id="columnHeaders">
-                <th class="sortable">Player <i class="fas no-display"></i></th>
-                <th class="sortable">Stat<i class="fas no-display"></i></th>
-                <th class="sortable">Value<i class="fas fa-sort-down"></i></th>
+      <div class="col-md-12 tableScroll">
+        <table id="playerTable">
+          <thead>
+            <tr id="columnHeaders">
+              <th class="sortable sorting" id="playerTh">Player <i class="fas fa-sort-down"></i></th>
+              <th>Stat<i class="fas no-display"></i></th>
+              <th class="sortable" id="valueTh">Value <i class="fas no-display"></i></th>
             </tr>
-            </thead>
-            <tbody id="playerTableBody">
+          </thead>
+          <tbody id="playerTableBody">
 
-            </tbody>
-          </table>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

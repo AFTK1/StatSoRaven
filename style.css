@@ -205,3 +205,29 @@ th {
   background: rgb(0, 0, 0);
   color: white;
 }
+
+.radar {
+  width: 200px;
+}
+
+.sorting {
+  background: rgb(141, 60, 207);
+  color: white;
+}
+
+.sortable {
+  user-select: none;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.sortable:hover {
+  background: #444444;
+}
+
+.sortable.sorting:hover {
+  background: #747474;
+}
+
+

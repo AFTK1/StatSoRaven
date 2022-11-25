@@ -1,7 +1,8 @@
 
 class PlayerChart {
     constructor() {
-        this.chartData = [...globalApplicationState.allData[0]]
+        this.chartData = [...globalApplicationState.playerData[0]]
+        this.currentData = []
         this.padding = {
             left: 50,
             right: 30,
@@ -12,6 +13,7 @@ class PlayerChart {
             width: 1310,
             height: 350
         }
+        
 
         this.categories = {
             "Passing": ["Completions", "Yards", "Yards Per Game", "Longest Pass"],
@@ -60,6 +62,12 @@ class PlayerChart {
         this.drawAxis()
         this.updateChartData("Completions", "Passing")
         this.attachStatisticHandler("Passing")
+
+    }
+
+    redrawChart() {
+
+        this.drawChart()
     }
 
     attatchArrowHandler() {
@@ -369,7 +377,7 @@ class PlayerChart {
             selectedData = [...selectedData, ...season[category]]
         });
 
-        globalApplicationState.tableState.updateTableData(selectedData, selection)
+        globalApplicationState.playerTableState.updateTableData(selectedData, selection)
 
         var newData = selectedData.map(function (d) {
             var stringArr = d.Name.split(" ")
@@ -380,28 +388,42 @@ class PlayerChart {
             }
         })
 
-        this.drawChart(newData.sort(compare))
 
-        function compare(a, b) {
-            if (a.x < b.x) {
-                return -1
-            }
-            if (a.x > b.x) {
-                return 1
-            }
-            return 0
-        }
+
+        this.currentData = newData.sort((a,b) => a.x < b.x ? -1 : a.x > b.x ? 1 : 0)
+        this.drawChart()
+
     }
 
-    drawChart(data) {
-        var filteredData = data.filter(function (d) { return d.y > 0 })
+    drawChart() {
+        var data = this.currentData.filter(function (d) { return d.y > 0 })
+
+        let headerData = globalApplicationState.playerTableState.headerData
+        
+        if (headerData.player.sorted) {
+            if (headerData.player.ascending) {
+                data.sort((a, b) => a.x < b.x ? -1 : a.x > b.x ? 1 : 0)
+            }
+            else {
+                data.sort((a, b) => a.x < b.x ? 1 : a.x > b.x ? -1 : 0)
+            }
+        }
+        else {
+            if (!headerData.value.ascending) {
+                data.sort((a, b) => a.y < b.y ? -1 : a.y > b.y ? 1 : 0)
+            }
+            else {
+                data.sort((a, b) => a.y < b.y ? 1 : a.y > b.y ? -1 : 0)
+            }
+        }
+
         this.scaleX
-            .domain(filteredData.map(function (d) {
+            .domain(data.map(function (d) {
                 return d.x
             }))
 
         this.scaleY
-            .domain([0, d3.max(filteredData, function (d) {
+            .domain([0, d3.max(data, function (d) {
                 return d.y
             })])
 
@@ -413,7 +435,7 @@ class PlayerChart {
         let that = this
 
 
-        var tableData = globalApplicationState.tableState.getTableData()
+        var tableData = globalApplicationState.playerTableState.getTableData()
 
         var tooltip = d3.select("body")
         .append("div")
@@ -428,7 +450,7 @@ class PlayerChart {
         .style('text-align', 'center')
 
         this.svg.selectAll('rect')
-            .data(filteredData)
+            .data(data)
             .enter()
             .append('rect')
             .attr('fill', 'rgb(141, 60, 207)')
