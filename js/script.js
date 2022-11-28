@@ -8,7 +8,6 @@ const globalApplicationState = {
 Promise.all([d3.json('./data/scrapedSeasonData.json')]).then(data => {
     globalApplicationState.teamData = data
     var teamChart = new TeamChart(globalApplicationState)
-    //var teamRadarChart = new TeamRadarChart(globalApplicationState)
 })
 
 Promise.all([d3.json('./data/scrapedPlayerData.json')]).then(data => {
@@ -19,6 +18,5 @@ Promise.all([d3.json('./data/scrapedPlayerData.json')]).then(data => {
 })
 
 //To Do:
-//  * radar chart?
-//  * add sorting to table
+//  * fix bugs with table sorting (rows being removed, player names after sorting)
 

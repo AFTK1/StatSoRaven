@@ -20,6 +20,7 @@
     integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   
   <script src="js/script.js"></script>
   <script src="js/playerChart.js"></script>
@@ -77,7 +78,7 @@
 
   <div class="container mb-4">
     <h2 class="mb-4" id="tsHeader">Team Stats</h2>
-    <div class="row mb-2">
+    <div class="row mb-4">
       <div class="col-2 themed-grid-col center vertical-align-parent">
         <div class="vertical-align-child">
           <div class="dropdown teamCategory">
@@ -119,14 +120,30 @@
         <svg id="teamChart"></svg>
       </div>
     </div>
-    <div class="row mb-2">
+    <div class="row mb-2 radars">
       <div class="col-12 center">
         <div class="row">
-          <div class="col-6 center radar" id="radarLeft"></div>
-          <div class="col-6 center radar" id="radarRight"></div>
+          <div class="col-2"></div>
+          <div class="col-2">
+            <button class="range btn btn-secondary dropdown-toggle firstSeasonButton" type="button"
+            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            2020
+          </button>
+          <div class="dropdown-menu menu-scroll range firstSeasonList" aria-labelledby="dropdownMenuButton">
+          </div>
+          </div>
+          <div class="col-4">
+          </div>
+          <div class="col-2">
+            <button class="range btn btn-secondary dropdown-toggle secondSeasonButton" type="button"
+            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            2021
+          </button>
+          <div class="dropdown-menu range secondSeasonList" aria-labelledby="dropdownMenuButton">
+          </div>
+          </div>
+          <div class="col-2"></div>
         </div>
-        <!-- <img src="https://quickchart.io/chart/render/zm-b611f89c-7c73-425c-b85f-b48b3b0ac328?data1=50,40,30,20"> -->
-        <!-- <svg id="teamRadarChart"></svg> -->
       </div>
     </div>
   </div>
