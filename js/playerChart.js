@@ -116,7 +116,7 @@ class PlayerChart {
         this.svg.append("text")
             .attr("text-anchor", "middle")
             .attr("y", 0)
-            .attr("x", -150)
+            .attr("x", -125)
             .attr("dy", ".75em")
             .attr("transform", "rotate(-90)")
             .text(this.selection)
