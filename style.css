@@ -43,7 +43,7 @@ h2 {
 .navbar {
 
   height: 150px;
-  background-color: rgb(172, 172, 172) !important;
+  background-color: rgb(173, 182, 190)!important;
 }
 
 .vertical-align-child {
@@ -234,8 +234,4 @@ th {
 
 .sortable.sorting:hover {
   background: #747474;
-}
-
-body{
-  background: #FFF6EA !important;
 }
