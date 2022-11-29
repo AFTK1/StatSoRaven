@@ -72,7 +72,7 @@ class PlayerTable {
             })
             .on("mouseover", function (d) {
                 d3.select('#playerChart').selectAll("." + this.__data__.fName.charAt(0) + this.__data__.lName)
-                    .attr("fill", "#000000")
+                    .attr("fill", "rgb(59, 51, 59)")
 
                 if (this.__data__.selection == that.statSelection) {
                     d3.select(this).style("background", "rgb(187, 187, 187)")

@@ -454,7 +454,7 @@ class PlayerChart {
             .data(data)
             .enter()
             .append('rect')
-            .attr('fill', 'rgb(141, 60, 207)')
+            .attr('fill', 'rgb(157, 91, 211)')
             .attr('x', function (d) { return that.scaleX(d.fl + " " + d.x) })
             .attr('y', function (d) { return that.scaleY(0) })
             .attr('width', that.scaleX.bandwidth())
@@ -467,7 +467,7 @@ class PlayerChart {
                 
                 
                 that.svg.selectAll("." + d["target"].className.baseVal)
-                    .attr("fill", "#000000")
+                    .attr("fill", "rgb(59, 51, 59)")
 
 
                     let idx = tableData.findIndex(d => d.lName === data.x.split(" ")[0] && d.fName.charAt(0) === data.fl)
@@ -482,11 +482,11 @@ class PlayerChart {
             })
             .on("mouseout", function (d) {
                 that.svg.selectAll("rect." + d["target"].className.baseVal)
-                    .attr("fill", "rgb(141, 60, 207)")
+                    .attr("fill", "rgb(157, 91, 211)")
             })
             .on("mousemove", function (d) {
                 that.svg.selectAll("rect." + d["target"].className.baseVal)
-                    .attr("fill", "#000000")
+                    .attr("fill", "rgb(59, 51, 59)")
 
                 tooltip.style("top", (d.pageY + 25) + "px").style("left", (d.pageX + 25) + "px")
             })

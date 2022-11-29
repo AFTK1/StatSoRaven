@@ -104,7 +104,7 @@ class TeamChart {
             .attr('y', (this.chart.height / 2) - 10)
             .attr('width', 10)
             .attr('height', 10)
-            .attr('fill', 'purple');
+            .attr('fill', 'rgb(157, 91, 211)');
 
         legend.append('rect')
             .attr('x', this.chart.width + 30)
@@ -217,7 +217,7 @@ class TeamChart {
         var ravensPath = this.svg.append('path')
             .datum(ravensData)
             .attr("fill", "none")
-            .attr("stroke", "#8D3CCF")
+            .attr("stroke", "rgb(157, 91, 211)")
             .attr("stroke-width", 3)
             .attr("d", d3.line()
                 .x((d) => { return this.scaleX(d.x) + 45 })
@@ -291,7 +291,7 @@ class TeamChart {
 
                 if (isAreaShowing) {
                     ravensArea
-                        .attr("fill", "#8D3CCF")
+                        .attr("fill", "rgb(157, 91, 211)")
 
                     opponentsArea
                         .attr("fill", "#F03939")

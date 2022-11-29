@@ -18,7 +18,7 @@ html {
 
 h2 {
   text-align: center;
-  background-color: rgb(32, 27, 32);
+  background-color: rgb(59, 51, 59);
   padding: 15px;
   color: rgb(255, 255, 255);
   margin: 0 !important
@@ -91,7 +91,7 @@ h2 {
 }
 
 input:checked+.slider {
-  background-color: rgb(141, 60, 207);
+  background-color: rgb(157, 91, 211);
 }
 
 input:focus+.slider {
@@ -143,7 +143,7 @@ input:checked+.slider:before {
   content: "";
   display: inline-block;
   /* Arrow */
-  border: solid rgb(141, 60, 207);
+  border: solid rgb(157, 91, 211);
   border-width: 0 8px 8px 0;
   display: inline-block;
   padding: 3px;
@@ -209,7 +209,7 @@ td {
 }
 
 th {
-  background: rgb(32, 27, 32);
+  background: rgb(59, 51, 59);
   color: white;
 }
 
@@ -218,7 +218,7 @@ th {
 }
 
 .sorting {
-  background: rgb(141, 60, 207);
+  background: rgb(157, 91, 211);
   color: white;
 }
 
@@ -235,3 +235,9 @@ th {
 .sortable.sorting:hover {
   background: #747474;
 }
+
+/* .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+} */
