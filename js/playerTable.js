@@ -135,7 +135,7 @@ class PlayerTable {
                 newStat[keys[i]] = player[keys[i]]
             }
 
-            const idx = arr.findIndex(d => d.lName === lName)
+            const idx = arr.findIndex(d => d.lName === lName && d.fName === fName)
             if (idx > -1) {
                 hidden = true
             }
