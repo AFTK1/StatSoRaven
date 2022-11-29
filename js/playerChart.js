@@ -438,7 +438,7 @@ class PlayerChart {
 
         var tableData = globalApplicationState.playerTableState.getTableData()
 
-        var tooltip = d3.select("body")
+        var tooltip = d3.select(".playerStats")
         .append("div")
         .style("position", "absolute")
         .style("visibility", "hidden")
