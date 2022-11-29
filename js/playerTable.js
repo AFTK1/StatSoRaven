@@ -59,16 +59,19 @@ class PlayerTable {
 
         rowSelection
             .style("background", function (d) {
-                if (d.selection != that.statSelection) {
-                    return "rgba(255, 222, 115, 0.5)"
-                }
-
-                if (d.hidden == false) {
-                    return "rgba(161, 83, 224, 0.25)"
-                }
+                
+                    if (d.selection != that.statSelection) {
+                        return "rgba(255, 222, 115, 0.5)"
+                    }
+                
+                    if (!that.headerData.value.sorted){
+                        if (d.hidden == false) {
+                            return "rgba(161, 83, 224, 0.25)"
+                        }
+                    }
             })
             .on("mouseover", function (d) {
-                d3.select('#playerChart').selectAll("rect." + this.__data__.lName)
+                d3.select('#playerChart').selectAll("." + this.__data__.fName.charAt(0) + this.__data__.lName)
                     .attr("fill", "#000000")
 
                 if (this.__data__.selection == that.statSelection) {
@@ -78,20 +81,24 @@ class PlayerTable {
             })
             .on("mouseout", function (d) {
 
-                d3.select('#playerChart').selectAll("rect." + this.__data__.lName)
+                d3.select('#playerChart').selectAll("." + this.__data__.fName.charAt(0) + this.__data__.lName)
                     .attr("fill", "rgb(141, 60, 207)")
 
+
                 if (this.__data__.selection == that.statSelection) {
-                    if (this.__data__.hidden == false) {
-                        d3.select(this).style("background", "rgba(161, 83, 224, 0.25)")
+                    if(!that.headerData.value.sorted){
+                        if (this.__data__.hidden == false) {
+                        
+                            d3.select(this).style("background", "rgba(161, 83, 224, 0.25)")
+                        }
+                        else {
+                            d3.select(this).style("background", "none")
+                        }       
                     }
                     else {
                         d3.select(this).style("background", "none")
                     }
                 }
-
-
-
             })
     }
 
@@ -165,10 +172,24 @@ class PlayerTable {
                     this.headerData.value.sorted = false
 
                     if (this.headerData.player.ascending) {
-                        this.tableData.sort((a, b) => a.lName < b.lName ? 1 : a.lName > b.lName ? -1 : 0)
+                        this.tableData.sort((a, b) => {
+                            if(a.lName === b.lName){
+                                return a.stats[0].year < b.stats[0].year ? -1 : a.stats[0].year > b.stats[0].year ? 1 : 0
+                            }
+                            else{
+                                return a.lName < b.lName ? 1 : a.lName > b.lName ? -1 : 0
+                            }
+                        })
                     }
                     else {
-                        this.tableData.sort((a, b) => a.lName < b.lName ? -1 : a.lName > b.lName ? 1 : 0)
+                        this.tableData.sort((a, b) => {
+                            if(a.lName === b.lName){
+                                return a.stats[0].year < b.stats[0].year ? -1 : a.stats[0].year > b.stats[0].year ? 1 : 0
+                            }
+                            else{
+                                return a.lName < b.lName ? -1 : a.lName > b.lName ? 1 : 0
+                            }
+                        })
                     }
 
                     this.headerData.player.ascending = !this.headerData.player.ascending
@@ -179,7 +200,6 @@ class PlayerTable {
                     this.headerData.player.sorted = false
 
                     let selection = this.statSelection
-
                     if (this.headerData.value.ascending) {
                         this.tableData.sort((a, b) => a.stats[0][selection] < b.stats[0][selection] ? -1 : a.stats[0][selection] > b.stats[0][selection] ? 1 : 0)
                     }
@@ -189,6 +209,7 @@ class PlayerTable {
 
                     this.headerData.value.ascending = !this.headerData.value.ascending
                 }
+
 
                 this.collapseAllRows()
                 this.drawTable()
@@ -264,7 +285,7 @@ class PlayerTable {
 
                         var newRow = {
                             fName: rowData.fName,
-                            lName: rowData.fName,
+                            lName: rowData.lName,
                             hidden: true,
                             selection: stat,
                             isExpanded: false,

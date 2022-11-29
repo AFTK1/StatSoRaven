@@ -384,6 +384,7 @@ class PlayerChart {
             var dx = stringArr[1] + " " + stringArr[stringArr.length - 1]
             return {
                 x: dx,
+                fl: stringArr[0].charAt(0),
                 y: d[selection]
             }
         })
@@ -399,7 +400,7 @@ class PlayerChart {
         var data = this.currentData.filter(function (d) { return d.y > 0 })
 
         let headerData = globalApplicationState.playerTableState.headerData
-        
+
         if (headerData.player.sorted) {
             if (headerData.player.ascending) {
                 data.sort((a, b) => a.x < b.x ? -1 : a.x > b.x ? 1 : 0)
@@ -419,7 +420,7 @@ class PlayerChart {
 
         this.scaleX
             .domain(data.map(function (d) {
-                return d.x
+                return d.fl + " " + d.x
             }))
 
         this.scaleY
@@ -454,18 +455,25 @@ class PlayerChart {
             .enter()
             .append('rect')
             .attr('fill', 'rgb(141, 60, 207)')
-            .attr('x', function (d) { return that.scaleX(d.x) })
+            .attr('x', function (d) { return that.scaleX(d.fl + " " + d.x) })
             .attr('y', function (d) { return that.scaleY(0) })
             .attr('width', that.scaleX.bandwidth())
             .attr('height', function (d) { return +d.y < 0 ? 0 : ((that.chart.height - that.padding.bottom) - (that.scaleY(0))) })
-            .attr("class", (d) => d.x.trim().split(" ")[0])
+            .attr("class", function (d) { 
+                var lName = d.x.trim().split(" ")[0]
+                return d.fl + lName
+            })
             .on("mouseover", function (d, data) {
-                that.svg.selectAll("rect." + d["target"].className.baseVal)
+                
+                
+                that.svg.selectAll("." + d["target"].className.baseVal)
                     .attr("fill", "#000000")
 
-                    let idx = tableData.findIndex(d => d.lName === data.x.split(" ")[0])
+
+                    let idx = tableData.findIndex(d => d.lName === data.x.split(" ")[0] && d.fName.charAt(0) === data.fl)
                     let fullName = tableData[idx].fName + " " +  tableData[idx].lName
-                    
+
+
                     tooltip
                     .style("visibility", "visible")
                     .html('<p>' + fullName + '</p><p>' + that.selection + ": " + data.y.toLocaleString("en-US") + '</p>')

@@ -16,7 +16,3 @@ Promise.all([d3.json('./data/scrapedPlayerData.json')]).then(data => {
     globalApplicationState.playerTableState = new PlayerTable(globalApplicationState)
     globalApplicationState.playerChartState = new PlayerChart(globalApplicationState)  
 })
-
-//To Do:
-//  * fix bugs with table sorting (rows being removed, player names after sorting)
-
