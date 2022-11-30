@@ -39,6 +39,7 @@ class PlayerChart {
             .attr("width", "100%")
             .attr("height", this.chart.height)
 
+        this.chart.width = document.getElementById('playerChart').getBoundingClientRect().width
 
         this.isAreaShowing = false
         this.scaleY = d3.scaleLinear()

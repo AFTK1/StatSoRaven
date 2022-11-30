@@ -9,16 +9,34 @@ class TeamChart {
             top: 15,
             bottom: 50
         }
+
         this.chart = {
             width: 850,
             height: 600
         }
 
+        var default_width = this.chart.width - this.padding.left - this.padding.right
+
+        var current_width = window.innerWidth
+
+        console.log(default_width)
+        console.log(current_width)
+
+        if(current_width < 1642){
+            
+            
+        }
 
 
         this.svg = d3.selectAll("#teamChart")
             .attr("width", "100%")
             .attr("height", this.chart.height)
+            
+        this.chart.width = document.getElementById('teamChart').getBoundingClientRect().width - 150
+
+        // window.addEventListener("resize", function() {
+        //     this.chart.width = document.getElementById('teamChart').getBoundingClientRect().width - 150
+        // });
 
         this.categories = {
             "Scoring": ["Total Points Per Game", "Total Points", "Total Touchdowns"],
@@ -58,7 +76,7 @@ class TeamChart {
         this.svg.selectAll('text,.tick').remove()
 
         this.svg.append('text')
-            .attr("x", this.chart.width / 2)
+            .attr("x", "50%")
             .attr("y", this.chart.height - 5)
             .text("Season")
 
