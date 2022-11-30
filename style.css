@@ -240,7 +240,7 @@ th {
 }
 
 body {	
-	background: linear-gradient(to bottom, #c60c31cc, #c60c314b, #ee37312d, #9e7c0c1f, #9e7c0c18 );
+	background: linear-gradient(to bottom, #c60c316c, #da14145d, #8917ac2d, #a61ecf3f, #d442e75b );
 	background-size: 100%;
 	background-repeat: no-repeat;
 }
@@ -252,7 +252,7 @@ body:before{
 	bottom: 0;
 	width: 100%;
 	z-index: -1;
-	background: linear-gradient(to right bottom, rgba(255,255,255,0.2), #9e7c0c73 75%);
+	background: linear-gradient(to right bottom, rgba(255,255,255,0.2), #caa62d4f 90%);
 }
 
 
