@@ -21,7 +21,10 @@ h2 {
   background-color: rgb(59, 51, 59);
   padding: 15px;
   color: rgb(255, 255, 255);
-  margin: 0 !important
+  margin: 0 !important;
+  /* position: sticky;
+  top: 0;
+  z-index: 1000; */
 }
 
 .btn {
@@ -42,7 +45,7 @@ h2 {
 
 .navbar {
 
-  height: 150px;
+  height: 200px;
   background-color: rgb(173, 182, 190)!important;
 }
 
@@ -236,8 +239,45 @@ th {
   background: #747474;
 }
 
-/* .sticky {
-  position: fixed;
-  top: 0;
-  width: 100%
-} */
+body {	
+	background: linear-gradient(to bottom, #c60c31cc, #c60c314b, #ee37312d, #9e7c0c1f, #9e7c0c18 );
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+body:before{
+	content:'';
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: -1;
+	background: linear-gradient(to right bottom, rgba(255,255,255,0.2), #9e7c0c73 75%);
+}
+
+
+body {
+	margin: 0;
+	font-size: 1.15rem;
+	line-height: 1.4em;
+}
+
+.containerCustom {
+	background-color: #FFF;
+	margin: 20px 10%;
+	padding: 30px 60px;
+	border-radius: 20px;
+	box-shadow: 0 10px 26px 0 rgba(0, 0, 0, 0.267);
+}
+
+main,header {
+	box-sizing: border-box;
+}
+
+main {
+	background-color: #f7f7f7;
+	padding: 20px;
+	border-radius: 10px;
+	color: #6b6b6b;
+	margin: 40px 0;
+}
