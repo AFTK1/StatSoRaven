@@ -43,12 +43,6 @@ h2 {
   justify-content: center;
 }
 
-.navbar {
-
-  height: 200px;
-  background-color: rgb(192, 161, 179)!important;
-}
-
 .vertical-align-child {
   display: inline-block;
 }
@@ -239,7 +233,15 @@ th {
   background: #747474;
 }
 
-/*courtesy of https://codemyui.com/change-background-gradient-on-scrolling/ */
+/* .navbar {
+
+  height: 200px;
+  background-color: rgb(192, 161, 179)!important;
+}
+
+.navbarCustom .navbar-brand{
+  color: rgb(255, 230, 230) !important;
+}
 
 body {	
 	background: linear-gradient(to bottom, #c60c3131, #da14142a, #8917ac2d, #a61ecf3f, #d442e75b );
@@ -255,8 +257,35 @@ body:before{
 	width: 100%;
 	z-index: -1;
 	background: linear-gradient(to right bottom, rgba(255,255,255,0.2), #caa62d4f 90%);
+} */
+
+.navbar {
+
+  height: 200px;
+  background-color: rgb(231, 195, 117)!important;
 }
 
+.navbarCustom .navbar-brand{
+  color: rgb(255, 249, 234) !important;
+}
+
+body {	
+	background: linear-gradient(to bottom, #c6180c59, #da8b1425, #e0c1392a, #e0cf392a, #e742c32a );
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+body:before{
+	content:'';
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: -1;
+	background: linear-gradient(to right bottom, rgba(255,255,255,0.2), #caa52d3d 90%);
+}
+
+/*courtesy of https://codemyui.com/change-background-gradient-on-scrolling/ */
 
 body {
 	margin: 0;
@@ -284,6 +313,3 @@ main {
 	margin: 40px 0;
 }
 
-.navbarCustom .navbar-brand{
-  color: rgb(255, 230, 230) !important;
-}
