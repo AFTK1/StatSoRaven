@@ -46,7 +46,7 @@ h2 {
 .navbar {
 
   height: 200px;
-  background-color: rgb(201, 152, 168)!important;
+  background-color: rgb(192, 161, 179)!important;
 }
 
 .vertical-align-child {
@@ -285,5 +285,5 @@ main {
 }
 
 .navbarCustom .navbar-brand{
-  color: rgb(253, 200, 208) !important;
+  color: rgb(255, 230, 230) !important;
 }
