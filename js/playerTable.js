@@ -82,7 +82,7 @@ class PlayerTable {
             .on("mouseout", function (d) {
 
                 d3.select('#playerChart').selectAll("." + this.__data__.fName.charAt(0) + this.__data__.lName)
-                    .attr("fill", "rgb(141, 60, 207)")
+                    .attr("fill", "rgb(108, 25, 177)")
 
 
                 if (this.__data__.selection == that.statSelection) {
