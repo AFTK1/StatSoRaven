@@ -11,7 +11,7 @@ html {
 }
 
 .banner {
-  background-color: rgb(157, 91, 211);
+  background-color: rgb(97, 9, 148);
   color: rgb(255, 255, 255);
   padding-bottom: 1rem;
 }
@@ -46,7 +46,7 @@ h2 {
 .navbar {
 
   height: 200px;
-  background-color: rgb(173, 182, 190)!important;
+  background-color: rgb(201, 152, 168)!important;
 }
 
 .vertical-align-child {
@@ -164,7 +164,7 @@ input:checked+.slider:before {
 
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
-  background-color: rgb(175, 111, 228) !important;
+  background-color: rgb(108, 25, 177) !important;
   color: #444;
   cursor: pointer;
   width: 100%;
@@ -221,7 +221,7 @@ th {
 }
 
 .sorting {
-  background: rgb(157, 91, 211);
+  background: rgb(108, 25, 177);
   color: white;
 }
 
@@ -239,8 +239,10 @@ th {
   background: #747474;
 }
 
+/*courtesy of https://codemyui.com/change-background-gradient-on-scrolling/ */
+
 body {	
-	background: linear-gradient(to bottom, #c60c316c, #da14145d, #8917ac2d, #a61ecf3f, #d442e75b );
+	background: linear-gradient(to bottom, #c60c3131, #da14142a, #8917ac2d, #a61ecf3f, #d442e75b );
 	background-size: 100%;
 	background-repeat: no-repeat;
 }
@@ -280,4 +282,8 @@ main {
 	border-radius: 10px;
 	color: #6b6b6b;
 	margin: 40px 0;
+}
+
+.navbarCustom .navbar-brand{
+  color: rgb(253, 200, 208) !important;
 }

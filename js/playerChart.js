@@ -454,7 +454,7 @@ class PlayerChart {
             .data(data)
             .enter()
             .append('rect')
-            .attr('fill', 'rgb(157, 91, 211)')
+            .attr('fill', 'rgb(108, 25, 177)')
             .attr('x', function (d) { return that.scaleX(d.fl + " " + d.x) })
             .attr('y', function (d) { return that.scaleY(0) })
             .attr('width', that.scaleX.bandwidth())
@@ -482,7 +482,7 @@ class PlayerChart {
             })
             .on("mouseout", function (d) {
                 that.svg.selectAll("rect." + d["target"].className.baseVal)
-                    .attr("fill", "rgb(157, 91, 211)")
+                    .attr("fill", "rgb(108, 25, 177)")
             })
             .on("mousemove", function (d) {
                 that.svg.selectAll("rect." + d["target"].className.baseVal)
