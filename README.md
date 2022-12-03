@@ -2,7 +2,9 @@
 
 A data visualization site focused on the Baltimore Ravens NFL team.
 
-# Submission
+
+
+### Submission
 
 Our code:
 - playerChart.js
